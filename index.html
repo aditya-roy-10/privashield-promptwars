@@ -1,0 +1,1065 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="dark light" />
+<link rel="icon" href="data:," />
+<title>PRIVASHIELD — Share the data. Not the identity.</title>
+<link rel="stylesheet" href="/src/styles.css" />
+
+</head>
+<body>
+
+<!-- ================= Stage 5B: landing navigation ================= -->
+<nav class="site-nav" id="landingNav" aria-label="Site navigation">
+  <div class="site-nav-in">
+    <a class="site-brand" href="#home" data-navlink="home">
+      <span class="brand-mark" aria-hidden="true">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+      </span>
+      <span><span class="wm">PRIVA<span>SHIELD</span></span><span class="tg" style="display:block">Share the data. Not the identity.</span></span>
+    </a>
+    <div class="nav-links" role="list">
+      <a href="#home" data-navlink="home" class="active">Home</a>
+      <a href="#features" data-navlink="features">Features</a>
+      <a href="#how" data-navlink="how">How It Works</a>
+      <a href="#use-cases" data-navlink="use-cases">Use Cases</a>
+      <a href="#privacy" data-navlink="privacy">Privacy</a>
+      <a href="#about" data-navlink="about">About</a>
+    </div>
+    <div class="nav-right">
+      <button class="icon-btn" id="btnThemeL" type="button" aria-pressed="false" aria-label="Toggle light / dark theme">
+        <svg class="ic-sun" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+        <svg class="ic-moon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+        <span class="lbl theme-lbl">Dark</span>
+      </button>
+      <button class="nav-cta" type="button" data-app-link>
+        Launch App
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </button>
+      <button class="icon-btn nav-burger" id="btnMenu" type="button" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#home" data-navlink="home" class="active">Home</a>
+    <a href="#features" data-navlink="features">Features</a>
+    <a href="#how" data-navlink="how">How It Works</a>
+    <a href="#use-cases" data-navlink="use-cases">Use Cases</a>
+    <a href="#privacy" data-navlink="privacy">Privacy</a>
+    <a href="#about" data-navlink="about">About</a>
+    <button class="nav-cta" type="button" data-app-link>Launch App</button>
+  </div>
+</nav>
+
+<!-- ================= Stage 5B: landing page (route /) ================= -->
+<div id="landingView">
+<main>
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <div class="l-wrap hero-in">
+      <div>
+        <span class="hero-pill"><span class="dot"></span> Client-Side Processing</span>
+        <h1>Share the data.<br /><span class="grad">Not the identity.</span></h1>
+        <p class="sub">Detect, classify and redact sensitive personal information from documents in seconds — without your data ever leaving your browser during sanitization.</p>
+        <div class="hero-ctas">
+          <button class="btn primary btn-lg" type="button" data-app-link>
+            Start Sanitizing
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </button>
+          <button class="btn btn-lg btn-ghost" type="button" data-demo-link>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="6 3 20 12 6 21 6 3"/></svg>
+            Try Live Demo
+          </button>
+        </div>
+        <div class="trust-row">
+          <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> No sign-up required</span>
+          <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> No backend processing</span>
+          <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> No sensitive document transmission</span>
+        </div>
+      </div>
+      <div class="hero-viz" role="img" aria-label="Illustration: sensitive identifiers such as an email address, a card number and an Aadhaar number pass through a privacy shield and come out redacted, pseudonymized and masked">
+        <div class="viz-label">Live sanitization flow</div>
+        <div class="viz-flow">
+          <div class="viz-col">
+            <div class="viz-chip raw">rahul.verma99@gmail.com</div>
+            <div class="viz-chip raw">4111 1111 1111 1111</div>
+            <div class="viz-chip raw">Aadhaar 2345 6789 0124</div>
+          </div>
+          <div class="viz-arrow" aria-hidden="true"></div>
+          <div class="viz-shield">
+            <div class="ring"><div class="core">
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+            </div></div>
+            <div class="cap">Privacy<br />Shield</div>
+          </div>
+          <div class="viz-arrow" aria-hidden="true"></div>
+          <div class="viz-col">
+            <div class="viz-chip safe">[REDACTED]</div>
+            <div class="viz-chip safe blue">CARD_001</div>
+            <div class="viz-chip safe amber">XXXX XXXX 0124</div>
+          </div>
+        </div>
+        <div class="viz-foot">Detection, validation &amp; redaction run <b>entirely in this tab</b> — the raw values above are synthetic samples.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product overview -->
+  <section class="l-section" id="overview" style="padding-top:56px">
+    <div class="l-wrap">
+      <div class="reveal">
+        <p class="l-kicker">The problem</p>
+        <h2 class="l-h2">One careless paste can expose everyone in the file.</h2>
+        <p class="l-lede">Every day, logs, resumes, support tickets and clinical notes get forwarded, screenshotted and uploaded — carrying email addresses, phone numbers, Aadhaar and PAN numbers, card details and IP addresses with them. Once a document is shared, that exposure can't be taken back.</p>
+      </div>
+      <div class="ov-grid">
+        <div class="ov-card reveal">
+          <h3><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f87171" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg> How PII leaks</h3>
+          <p>Identifiers hide inside ordinary text — a signature block, a KYC export row, a debug log line. Manual find-and-replace misses repeats, formatting variants and values nobody noticed were there, and uploading the file to an online tool creates a second copy of the very data you're trying to protect.</p>
+        </div>
+        <div class="ov-card fix reveal">
+          <h3><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg> How PRIVASHIELD fixes it</h3>
+          <p>PRIVASHIELD scans the document locally, classifies every identifier with real validation evidence — Luhn for cards, Verhoeff for Aadhaar — and redacts it in your choice of three modes. Borderline matches are flagged for your review, never silently trusted or silently dropped, and nothing is uploaded anywhere in the process.</p>
+        </div>
+      </div>
+
+      <!-- Statistics: actual product capabilities only -->
+      <div class="stats-band reveal">
+        <div class="stat-tile"><div class="num">6</div><div class="cap">Supported PII categories</div><div class="sub2">Email · Phone · IP · PAN · Aadhaar · Credit card</div></div>
+        <div class="stat-tile"><div class="num blue">3</div><div class="cap">Redaction modes</div><div class="sub2">Full mask · Partial mask · Pseudonymization</div></div>
+        <div class="stat-tile"><div class="num">0</div><div class="cap">Server-side document processing</div><div class="sub2">Every scan runs in your browser — there is no upload step</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="l-section" id="features">
+    <div class="l-wrap">
+      <div class="reveal">
+        <p class="l-kicker">Features</p>
+        <h2 class="l-h2">A complete sanitization toolkit, in one tab.</h2>
+        <p class="l-lede">Everything below is implemented and running in the workspace today — open the app and try each one on the built-in sample.</p>
+      </div>
+      <div class="feat-grid">
+        <article class="feat reveal">
+          <div class="ficon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></div>
+          <h3>Intelligent PII detection</h3>
+          <p>Six identifier categories — email, phone, IPv4/IPv6, PAN, Aadhaar and credit cards — with context-aware classification that separates real identifiers from order numbers, timestamps and invoice references. Uncertain matches surface as review candidates instead of disappearing.</p>
+        </article>
+        <article class="feat reveal">
+          <div class="ficon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h16"/><path d="M4 15h16"/><path d="M10 3 8 21"/><path d="m16 3-2 18"/></svg></div>
+          <h3>Luhn &amp; checksum validation</h3>
+          <p>Cards must pass the Luhn algorithm; Aadhaar numbers are verified with the Verhoeff checksum; PAN holder codes and IPv4 octets are structure-checked. A checksum pass means mathematical consistency — the UI never claims it proves an identity is genuine.</p>
+        </article>
+        <article class="feat reveal">
+          <div class="ficon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></svg></div>
+          <h3>Three redaction modes</h3>
+          <p>Full Mask replaces values with [REDACTED]. Partial Mask keeps limited verification context, like a card's last four digits. Pseudonymization swaps in consistent aliases. Switch modes instantly — the output re-renders from the same scan.</p>
+        </article>
+        <article class="feat reveal">
+          <div class="ficon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></div>
+          <h3>Consistent pseudonymization</h3>
+          <p>The same identifier always becomes the same alias — EMAIL_001, PHONE_001, CARD_001 — even across formatting variants and CSV rows, so relationships in the data survive. The mapping lives only in tab memory and is never exported.</p>
+        </article>
+        <article class="feat reveal">
+          <div class="ficon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M12 3v18"/></svg></div>
+          <h3>Live side-by-side comparison</h3>
+          <p>Original and sanitized text side by side with color-coded highlighting, line numbers and synchronized scrolling. Click any finding in the inspector to jump straight to its occurrence in the document.</p>
+        </article>
+        <article class="feat reveal">
+          <div class="ficon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M7 13v3"/><path d="M12 9v7"/><path d="M17 5v11"/></svg></div>
+          <h3>Privacy analytics</h3>
+          <p>A live dashboard computed from the current scan: total occurrences, unique identifiers, redaction coverage, an entity-distribution donut, and a transparent privacy exposure score — estimated exposure before sanitization versus residual after, using published per-category sensitivity weights. Every number traces back to an actual detection — nothing is decorative.</p>
+        </article>
+        <article class="feat reveal">
+          <div class="ficon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg></div>
+          <h3>Leak Guard</h3>
+          <p>After sanitization, a second detection pass re-scans the output with the same pattern/checksum engine (so it shares the primary scan's blind spots). Anything still matching a supported pattern — a value you excluded during review, a category switched off, a Keep override — is listed with the reason it survived, and downloads pause with a warning until you resolve it or explicitly export anyway. A clear pass means no supported patterns remain, never a guarantee of complete anonymization.</p>
+        </article>
+        <article class="feat reveal">
+          <div class="ficon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M12 11h4"/><path d="M12 16h4"/><path d="M8 11h.01"/><path d="M8 16h.01"/></svg></div>
+          <h3>Sanitization audit reports</h3>
+          <p>Download a human-readable or JSON audit report for every sanitization: timestamp, document type and size, per-category counts, validation results, redaction mode, redacted and excluded counts, Leak Guard's remaining matches, exposure before and after, and an optional SHA-256 hash of the sanitized output — generated with the browser's Web Crypto API. Reports contain counts only: no PII, no raw text, no filenames, no pseudonym mapping — and they are labelled an application-generated report, not a compliance certificate.</p>
+        </article>
+        <article class="feat reveal">
+          <div class="ficon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h.01"/><path d="M8.5 16.4a5 5 0 0 1 7 0"/><path d="M2 8.82a15 15 0 0 1 4.17-2.65"/><path d="M10.66 5c4.01-.36 8.14.9 11.34 3.76"/><path d="M16.85 11.25a10 10 0 0 1 2.22 1.68"/><path d="M5 13a10 10 0 0 1 5.24-2.76"/><path d="m2 2 20 20"/></svg></div>
+          <h3>Offline processing</h3>
+          <p>The page makes zero runtime network requests — the engine, the CSV parser and every asset are already on the page. Load it once and it keeps working with the network unplugged, and no document is ever stored between sessions.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="l-section" id="how">
+    <div class="l-wrap">
+      <div class="reveal">
+        <p class="l-kicker">How it works</p>
+        <h2 class="l-h2">From raw document to safe-to-share in three steps.</h2>
+      </div>
+      <div class="steps">
+        <div class="step reveal">
+          <div class="snum">STEP 01</div>
+          <div class="ficon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"/><path d="M12 12v9"/><path d="m16 17-4-4-4 4"/></svg></div>
+          <h3>Add your document</h3>
+          <p>Upload a TXT or CSV file — drag and drop works too — or paste raw text straight into the workspace. CSV files keep their structure: headers, rows, columns and quoted fields are preserved.</p>
+          <button class="step-link" type="button" data-app-link>Open the workspace <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
+        </div>
+        <div class="step-arrow" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></div>
+        <div class="step reveal">
+          <div class="snum">STEP 02</div>
+          <div class="ficon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 4h-7"/><path d="M10 4H3"/><path d="M21 12h-9"/><path d="M8 12H3"/><path d="M21 20h-5"/><path d="M12 20H3"/><path d="M14 2v4"/><path d="M8 10v4"/><path d="M16 18v4"/></svg></div>
+          <h3>Detect, review, sanitize</h3>
+          <p>The engine detects and validates identifiers as you type. Review each finding in the inspector — approve a candidate, exclude a false alarm, or override its redaction mode — then pick Full Mask, Partial Mask or Pseudonymization.</p>
+          <button class="step-link" type="button" data-demo-link>See it on the sample <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
+        </div>
+        <div class="step-arrow" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></div>
+        <div class="step reveal">
+          <div class="snum">STEP 03</div>
+          <div class="ficon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg></div>
+          <h3>Verify &amp; download</h3>
+          <p>Compare the sanitized output against the original, check the coverage meter and the remaining-matches count, then download the cleaned TXT or CSV — or copy it — with one click.</p>
+          <button class="step-link" type="button" data-app-link data-app-target="sec-reports">Go to export <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Use cases -->
+  <section class="l-section" id="use-cases">
+    <div class="l-wrap">
+      <div class="reveal">
+        <p class="l-kicker">Use cases</p>
+        <h2 class="l-h2">Built for the documents teams share every day.</h2>
+      </div>
+      <div class="feat-grid uc-grid">
+        <article class="feat reveal">
+          <div class="ficon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.8 2.3A.3.3 0 1 0 5 2H4a2 2 0 0 0-2 2v5a6 6 0 0 0 6 6 6 6 0 0 0 6-6V4a2 2 0 0 0-2-2h-1a.2.2 0 1 0 .3.3"/><path d="M8 15v1a6 6 0 0 0 6 6 6 6 0 0 0 6-6v-4"/><circle cx="20" cy="10" r="2"/></svg></div>
+          <h3>Healthcare</h3>
+          <p>Protect patient identifiers in clinical notes and intake forms before they are shared for referrals, audits or research — Aadhaar numbers are Verhoeff-verified, and contact details are masked while the clinical content stays readable.</p>
+        </article>
+        <article class="feat reveal">
+          <div class="ficon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 22h18"/><path d="M6 18v-7"/><path d="M10 18v-7"/><path d="M14 18v-7"/><path d="M18 18v-7"/><path d="m12 2 9 5H3l9-5z"/></svg></div>
+          <h3>Finance</h3>
+          <p>Redact financial identifiers from statements, KYC exports and payment logs. Mandatory Luhn validation keeps genuine card numbers from hiding among order totals and transaction references — and keeps those references from being flagged as cards.</p>
+        </article>
+        <article class="feat reveal">
+          <div class="ficon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+          <h3>Human Resources</h3>
+          <p>Sanitize resumes and employee documents before they circulate to hiring panels and external recruiters — emails, phone numbers and PAN details come out, qualifications and experience stay in.</p>
+        </article>
+        <article class="feat reveal">
+          <div class="ficon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M21 14h-3a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2z"/><path d="M3 14v-2a9 9 0 0 1 18 0v2"/></svg></div>
+          <h3>Customer Support</h3>
+          <p>Protect sensitive customer information in support tickets before escalating, exporting or attaching them to bug reports — pseudonymization keeps repeat customers linkable across a thread without exposing who they are.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Privacy & security -->
+  <section class="l-section" id="privacy">
+    <div class="l-wrap">
+      <div class="reveal">
+        <p class="l-kicker">Privacy &amp; security</p>
+        <h2 class="l-h2">The safest place for a document is the tab it started in.</h2>
+        <p class="l-lede">PRIVASHIELD has no backend to breach and no upload queue to leak. The architecture is deliberately boring: your document, a local engine, and a sanitized file out.</p>
+      </div>
+      <div class="arch reveal" role="img" aria-label="Architecture diagram: your document enters the PRIVASHIELD engine inside your browser and leaves as a sanitized document; nothing is sent to a server">
+        <div class="arch-box">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#9db1d4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>
+          <h3>Your document</h3>
+          <p>TXT / CSV upload or pasted text</p>
+        </div>
+        <div class="arch-arrow" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></div>
+        <div class="arch-box engine">
+          <span class="tag">Inside your browser</span>
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+          <h3>PRIVASHIELD engine</h3>
+          <p>Detection · validation · review · redaction — in tab memory only</p>
+        </div>
+        <div class="arch-arrow" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></div>
+        <div class="arch-box">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg>
+          <h3>Sanitized document</h3>
+          <p>Downloaded or copied by you — safe to share</p>
+        </div>
+      </div>
+      <div class="arch-cloud reveal">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f87171" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/><path d="m2 2 20 20"/></svg>
+        <div><strong>Never involved:</strong> no server receives your document, no external AI API sees its contents, and there is no database for it to end up in. This page makes zero runtime network requests.</div>
+      </div>
+      <div class="priv-list">
+        <div class="priv-item reveal">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          <div><strong>Processed inside the browser</strong>Detection, validation, redaction and export all run locally — large files are scanned in a background Web Worker so the interface never freezes.</div>
+        </div>
+        <div class="priv-item reveal">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/></svg>
+          <div><strong>Nothing is intentionally persisted</strong>No localStorage, cookies, IndexedDB or disk writes. Closing the tab — or pressing Clear session — destroys the document, your review decisions and the pseudonym mapping.</div>
+        </div>
+        <div class="priv-item warn reveal">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
+          <div><strong>Partial masking &amp; pseudonyms have limits</strong>Retained fragments (like a card's last four digits) and linkable aliases can still identify a person when combined with other data. Treat partially masked and pseudonymized output as sensitive, not anonymous.</div>
+        </div>
+        <div class="priv-item warn reveal">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
+          <div><strong>Detection cannot guarantee complete anonymization</strong>Pattern-based detection covers the six supported categories. Obfuscated identifiers (spelled-out addresses) and free-text names or addresses can be missed — review the output before sharing anything high-stakes.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="l-section" id="about">
+    <div class="l-wrap">
+      <div class="reveal">
+        <p class="l-kicker">About</p>
+        <h2 class="l-h2">A PromptWars hackathon project, built in the open.</h2>
+        <p class="l-lede">PRIVASHIELD was built in stages for Google PromptWars — each stage's prompt and verified results are recorded in PROMPT_LOG.md, which you can read and download inside the app. The engine is organized as modular vanilla-JavaScript detectors, validators, context analysis, redaction and verification modules (Leak Guard, exposure scoring, audit reports) with 100 in-browser fixture checks; Papa Parse is bundled locally so the app needs no runtime network access.</p>
+      </div>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:26px" class="reveal">
+        <button class="btn primary" type="button" data-app-link>Open the workspace</button>
+        <button class="btn" type="button" data-app-link data-app-target="sec-promptlog">Read the prompt log</button>
+      </div>
+
+      <!-- Final CTA -->
+      <div class="final-cta reveal">
+        <h2>Your data deserves protection.</h2>
+        <p>Sanitize the next document before you share it — it takes seconds, and nothing you load ever leaves your browser.</p>
+        <button class="btn primary btn-lg" type="button" data-app-link>
+          Launch PRIVASHIELD
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="l-wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="site-brand" href="#home" data-navlink="home">
+          <span class="brand-mark" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+          </span>
+          <span class="wm" style="font-size:16px;font-weight:700;letter-spacing:.14em">PRIVA<span style="color:var(--emerald-bright)">SHIELD</span></span>
+        </a>
+        <p>Browser-based PII detection, classification and sanitization. Share the data — not the identity.</p>
+        <p style="display:flex;align-items:center;gap:7px"><span style="width:7px;height:7px;border-radius:50%;background:var(--emerald);display:inline-block"></span> Client-Side Processing · works offline once loaded</p>
+      </div>
+      <div>
+        <h4>Product</h4>
+        <a href="#features" data-navlink="features">Features</a>
+        <a href="#how" data-navlink="how">How It Works</a>
+        <a href="#use-cases" data-navlink="use-cases">Use Cases</a>
+        <a href="#/app" data-app-link>Launch App</a>
+        <a href="#/app" data-demo-link>Try Live Demo</a>
+      </div>
+      <div>
+        <h4>Privacy</h4>
+        <a href="#privacy" data-navlink="privacy">Privacy &amp; security</a>
+        <a href="#/app" data-app-link data-app-target="privacyPanel">Privacy information panel</a>
+        <a href="#privacy" data-navlink="privacy">Detection limitations</a>
+        <a href="#/app" data-app-link data-app-target="sec-workspace">Sanitization workspace</a>
+      </div>
+      <div>
+        <h4>Project</h4>
+        <a href="#about" data-navlink="about">About PRIVASHIELD</a>
+        <a href="#/app" data-app-link data-app-target="sec-promptlog">Prompt Log (PROMPT_LOG.md)</a>
+        <a href="#/app" data-app-link data-app-target="sec-inspector">Detection Inspector</a>
+        <a href="#/app" data-app-link data-app-target="sec-reports">Audit Reports &amp; Export</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>PRIVASHIELD · Built for PromptWars · Google PromptWars hackathon project</span>
+      <span class="mono">zero runtime network requests · no telemetry · no document storage</span>
+    </div>
+  </div>
+</footer>
+</div><!-- /landingView -->
+
+<!-- ================= Workspace (route /app) ================= -->
+<div id="appView" hidden>
+<header class="topbar">
+  <div class="topbar-in">
+    <div class="brand">
+      <div class="brand-mark" aria-hidden="true">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+      </div>
+      <div>
+        <h1>PRIVA<span>SHIELD</span></h1>
+        <p>Share the data. Not the identity.</p>
+      </div>
+    </div>
+    <div class="topbar-badges">
+      <span class="badge"><span class="dot"></span> LOCAL PROCESSING · 100% CLIENT-SIDE</span>
+      <span class="badge">NO SERVER · NO API · NO TELEMETRY</span>
+      <span class="badge stage">v1.0.0 — LEAK GUARD · EXPOSURE SCORE · AUDIT REPORTS</span>
+      <button class="icon-btn" id="btnPrivacy" type="button" aria-expanded="false" aria-controls="privacyPanel">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        Privacy
+      </button>
+      <button class="icon-btn" id="btnTheme" type="button" aria-pressed="false" aria-label="Toggle light / dark theme">
+        <svg id="themeIconSun" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+        <svg id="themeIconMoon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+        <span id="themeLabel">Dark</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="app-shell">
+  <!-- ======= Stage 5B: workspace sidebar ======= -->
+  <aside id="appSidebar" aria-label="Workspace navigation">
+    <div class="side-label">Workspace</div>
+    <button class="side-item active" type="button" data-go="sec-dashboard">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg>
+      Dashboard
+    </button>
+    <button class="side-item" type="button" data-go="sec-workspace">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>
+      Sanitization Workspace
+    </button>
+    <button class="side-item" type="button" data-go="sec-inspector">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+      Detection Inspector
+    </button>
+    <button class="side-item" type="button" data-go="sec-reports">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M12 11h4"/><path d="M12 16h4"/><path d="M8 11h.01"/><path d="M8 16h.01"/></svg>
+      Audit Reports
+    </button>
+    <button class="side-item" type="button" data-go="sec-promptlog">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 13H8"/><path d="M16 17H8"/></svg>
+      Prompt Log
+    </button>
+    <button class="side-item" type="button" id="sidePrivacy">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      Privacy Information
+    </button>
+    <div class="side-sep"></div>
+    <button class="side-item" type="button" id="sideHome">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+      Back to Home
+    </button>
+    <div class="side-note">Documents stay in this tab's memory only — nothing is uploaded, stored or sent anywhere. Leaving the workspace does not clear your current document.</div>
+  </aside>
+
+<div class="wrap">
+
+  <!-- ======= Privacy information panel (Stage 5) ======= -->
+  <section class="privacy-panel" id="privacyPanel" aria-label="Privacy information">
+    <h2>How PRIVASHIELD handles your data</h2>
+    <p>Every document you paste or load is processed <strong>entirely inside this browser tab</strong>. Detection, validation, redaction and export all run in local memory — there is no backend to send anything to.</p>
+    <ul>
+      <li><strong>No transmission:</strong> no server calls, no external AI APIs, no analytics or telemetry. This page makes zero runtime network requests.</li>
+      <li><strong>No storage:</strong> nothing is written to localStorage, cookies, IndexedDB or disk. Closing the tab — or pressing Clear session — destroys the document, review decisions and pseudonym mapping.</li>
+      <li><strong>Pseudonym mapping stays here:</strong> the original-to-alias mapping lives only in tab memory, is never shown as a table and is never included in downloads.</li>
+      <li><strong>Validation ≠ verification:</strong> a Luhn or Verhoeff pass means a value is mathematically consistent — never that an identifier is genuine, issued or owned.</li>
+      <li><strong>Partial masks &amp; pseudonyms are still sensitive:</strong> retained fragments and linkable aliases can re-identify people; handle exports accordingly.</li>
+    </ul>
+  </section>
+
+  <!-- ======= Actions ======= -->
+  <div class="actions" role="toolbar" aria-label="Session actions">
+    <button class="btn primary" id="btnSample" type="button">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"/><path d="M12 12v9"/><path d="m16 17-4-4-4 4"/></svg>
+      Load sample data
+    </button>
+    <button class="btn" id="btnUpload" type="button">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>
+      Upload .txt / .csv
+    </button>
+    <input type="file" id="fileInput" accept=".txt,.csv,text/plain,text/csv" hidden />
+    <div class="spacer"></div>
+    <button class="btn" id="btnCopy" type="button" disabled>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+      Copy sanitized
+    </button>
+    <button class="btn" id="btnDownload" type="button" disabled>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg>
+      Download sanitized
+    </button>
+    <button class="btn danger" id="btnClear" type="button">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/></svg>
+      Clear session
+    </button>
+  </div>
+
+  <!-- ======= KPIs ======= -->
+  <div id="sec-dashboard">
+  <section class="kpis" aria-label="Session summary">
+    <div class="kpi">
+      <div class="label">Total detected occurrences</div>
+      <div class="value" id="kpiTotal">0</div>
+      <div class="sub" id="kpiTotalSub">No input processed yet</div>
+      <div class="risk-track" aria-hidden="true"><div class="risk-fill" id="riskFill"></div></div>
+      <div class="sub" id="kpiRiskSub">Exposure risk —</div>
+    </div>
+    <div class="kpi">
+      <div class="label">Unique identifiers</div>
+      <div class="value" id="kpiUnique">0</div>
+      <div class="sub">Distinct normalized values found</div>
+    </div>
+    <div class="kpi">
+      <div class="label">Redacted occurrences</div>
+      <div class="value" id="kpiRedacted" style="color:var(--emerald-bright)">0</div>
+      <div class="sub" id="kpiRedactedSub">Replaced in the sanitized output</div>
+    </div>
+    <div class="kpi">
+      <div class="label">Remaining PII matches</div>
+      <div class="value" id="kpiRemaining" style="color:var(--amber)">0</div>
+      <div class="sub" id="kpiRemainingSub">Supported matches still visible in the output</div>
+    </div>
+  </section>
+
+  <!-- ======= Entity counts ======= -->
+  <section class="entities" aria-label="Detected entity counts">
+    <button class="ent" type="button" data-enttype="EMAIL" style="--ec:var(--c-email)" title="Locate first occurrence in the original document"><div class="ename"><span class="swatch"></span>Email</div><div class="ecount" id="cnt-EMAIL">0</div><div class="edesc">Subdomains &amp; plus-addressing, strict token boundaries</div><div class="esub" id="sub-EMAIL">format-validated</div><div class="ehint">Click to locate</div></button>
+    <button class="ent" type="button" data-enttype="PHONE" style="--ec:var(--c-phone)" title="Locate first occurrence in the original document"><div class="ename"><span class="swatch"></span>Phone</div><div class="ecount" id="cnt-PHONE">0</div><div class="edesc">Indian mobile (+91 / 0091) &amp; intl. formats</div><div class="esub" id="sub-PHONE">normalized to E.164-style</div><div class="ehint">Click to locate</div></button>
+    <button class="ent" type="button" data-enttype="IP" style="--ec:var(--c-ip)" title="Locate first occurrence in the original document"><div class="ename"><span class="swatch"></span>IP address</div><div class="ecount" id="cnt-IP">0</div><div class="edesc">IPv4 octet-checked · IPv6 incl. compressed</div><div class="esub" id="sub-IP">v4 + v6</div><div class="ehint">Click to locate</div></button>
+    <button class="ent" type="button" data-enttype="PAN" style="--ec:var(--c-pan)" title="Locate first occurrence in the original document"><div class="ename"><span class="swatch"></span>PAN</div><div class="ecount" id="cnt-PAN">0</div><div class="edesc">AAAAA9999A + holder-code structure check</div><div class="esub" id="sub-PAN">structure-validated</div><div class="ehint">Click to locate</div></button>
+    <button class="ent" type="button" data-enttype="AADHAAR" style="--ec:var(--c-aadhaar)" title="Locate first occurrence in the original document"><div class="ename"><span class="swatch"></span>Aadhaar</div><div class="ecount" id="cnt-AADHAAR">0</div><div class="edesc">12-digit · Verhoeff checksum validation</div><div class="esub" id="sub-AADHAAR">checksum vs candidate split</div><div class="ehint">Click to locate</div></button>
+    <button class="ent" type="button" data-enttype="CREDIT_CARD" style="--ec:var(--c-card)" title="Locate first occurrence in the original document"><div class="ename"><span class="swatch"></span>Credit card</div><div class="ecount" id="cnt-CREDIT_CARD">0</div><div class="edesc">13–19 digits · Luhn mandatory, failures rejected</div><div class="esub" id="sub-CREDIT_CARD">Luhn-validated only</div><div class="ehint">Click to locate</div></button>
+  </section>
+  </div><!-- /sec-dashboard -->
+
+  <!-- ======= Validation disclaimer ======= -->
+  <div class="val-note" role="note">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
+    <div><strong>Validation ≠ verification.</strong> A “checksum valid” result means the value satisfies a mathematical check (Luhn for cards, Verhoeff for Aadhaar) and format rules — it does <strong>not</strong> prove the identifier is real, issued, active, or belongs to the person named. Values that match a format but fail a checksum or structure rule are kept as <strong>format candidates</strong> (dashed outline) for human review — never silently trusted, never labelled authentic.</div>
+  </div>
+
+  <!-- ======= Input ======= -->
+  <section class="panel" id="sec-workspace" aria-label="Raw text input">
+    <div class="panel-head">
+      <h2>Raw input</h2>
+      <span class="hint">Paste text, or drop a .txt / .csv file anywhere on this panel</span>
+      <div class="right">
+        <span class="badge" id="procStatus"><span class="dot"></span> IDLE — awaiting input</span>
+        <span class="hint mono" id="engineNote">Mode: FULL MASK → [REDACTED] · context-aware · manual review on</span>
+      </div>
+    </div>
+    <div class="drop-wrap" id="dropWrap">
+      <textarea id="inputText" spellcheck="false" placeholder="Paste raw text here — support tickets, logs, resumes, CSV rows…
+
+Or drag &amp; drop a .txt / .csv file, or hit “Load sample data” to try the built-in noisy dataset.
+
+Everything is processed in this tab's memory. Nothing is uploaded, stored, or sent anywhere."></textarea>
+      <div class="drop-overlay" aria-hidden="true">
+        <div>
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:8px"><path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"/><path d="M12 12v9"/><path d="m16 17-4-4-4 4"/></svg>
+          <strong>Drop to load file</strong>
+          <span>.txt or .csv — read locally with FileReader, never uploaded</span>
+        </div>
+      </div>
+    </div>
+    <div class="input-foot">
+      <span class="file-chip" id="fileChip"><span id="fileChipName">file</span><button type="button" id="fileChipClear" aria-label="Remove loaded file">✕</button></span>
+      <span id="statChars">0 chars</span>
+      <span id="statWords">0 words</span>
+      <span id="statLines">0 lines</span>
+      <span id="statCsv" style="display:none"></span>
+      <span style="margin-left:auto" id="statUpdated">Awaiting input</span>
+    </div>
+  </section>
+
+  <!-- ======= CSV formula warning ======= -->
+  <div class="warn-banner amber" id="csvWarn" role="alert">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
+    <div id="csvWarnText"><strong>Spreadsheet formula risk.</strong> Some cells in this CSV begin with =, +, − or @ — spreadsheet apps can execute those as formulas. The exported CSV prefixes any such cell with a leading apostrophe so it opens as inert text.</div>
+  </div>
+
+  <!-- ======= Synthetic demonstration lab (Stage 6) ======= -->
+  <section class="panel findings-wrap" aria-label="Synthetic demonstration lab" style="margin-top:14px">
+    <div class="panel-head">
+      <h2>Synthetic demonstration lab</h2>
+      <span class="hint">Realistic fictional documents — every value is invented for demonstration. Each sample mixes repeated entities, several PII categories and validation edge cases (checksum failures, benign references, invalid octets).</span>
+    </div>
+    <div class="demo-grid">
+      <div class="demo-card">
+        <span class="synth">SYNTHETIC · FICTIONAL</span>
+        <h3>Customer support tickets</h3>
+        <p>Repeat customer contact details across tickets, a card on file, a checksum-failing card kept as a review candidate, and an invoice reference that must not be flagged as a card.</p>
+        <button class="btn" type="button" data-demo="support">Load support tickets</button>
+      </div>
+      <div class="demo-card">
+        <span class="synth">SYNTHETIC · FICTIONAL</span>
+        <h3>Financial transaction log</h3>
+        <p>Settled card transactions (one card repeated in two formats), KYC identifiers, a benign settlement reference, and an invalid gateway IP the engine must reject.</p>
+        <button class="btn" type="button" data-demo="finance">Load transaction log</button>
+      </div>
+      <div class="demo-card">
+        <span class="synth">SYNTHETIC · FICTIONAL</span>
+        <h3>HR resume packet</h3>
+        <p>Two candidates with emails, phones, PAN and Aadhaar; one person's details repeated in a second format, plus a legacy PAN scan whose holder code fails structure validation.</p>
+        <button class="btn" type="button" data-demo="hr">Load resume packet</button>
+      </div>
+      <div class="demo-card">
+        <span class="synth">SYNTHETIC · FICTIONAL</span>
+        <h3>Clinical notes</h3>
+        <p>Patient contact details, a Verhoeff-valid Aadhaar repeated across notes, an insurer card, a ward terminal IP, a Verhoeff-failing legacy Aadhaar, and a timestamp that is not an identifier.</p>
+        <button class="btn" type="button" data-demo="clinical">Load clinical notes</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= Redaction controls (Stage 4) ======= -->
+  <section class="panel redact-panel" aria-label="Redaction mode controls">
+    <div class="panel-head">
+      <h2>Redaction mode</h2>
+      <span class="hint">Switching is instant — output re-renders from the cached scan, pseudonyms stay stable</span>
+      <div class="right">
+        <div class="mode-switch" role="group" aria-label="Redaction mode">
+          <button class="mode-btn active" id="modeFull" type="button" data-mode="FULL">Full Mask <span class="mb-sub">[REDACTED]</span></button>
+          <button class="mode-btn" id="modePartial" type="button" data-mode="PARTIAL">Partial Mask <span class="mb-sub">last-4 visible</span></button>
+          <button class="mode-btn" id="modePseudo" type="button" data-mode="PSEUDO">Pseudonymize <span class="mb-sub">EMAIL_001…</span></button>
+        </div>
+      </div>
+    </div>
+    <div class="cat-row" aria-label="Industry presets" style="border-top:0;border-bottom:1px solid var(--line)">
+      <span class="cat-label">Industry preset</span>
+      <button class="preset-btn active" type="button" data-preset="general">General purpose</button>
+      <button class="preset-btn" type="button" data-preset="healthcare">Healthcare</button>
+      <button class="preset-btn" type="button" data-preset="finance">Finance</button>
+      <button class="preset-btn" type="button" data-preset="hr">Human resources</button>
+      <button class="preset-btn" type="button" data-preset="support">Customer support</button>
+      <span class="hint" id="presetNote" style="flex:1 1 260px">General purpose — Full Mask, all six categories redacted. Presets choose a default redaction mode and document the workflow emphasis; they never switch a category off — all six categories always stay detected.</span>
+    </div>
+    <div class="cat-row" aria-label="Entity categories to redact">
+      <span class="cat-label">Redact categories</span>
+      <button class="cat-chip" type="button" data-cat="EMAIL" style="--cc:var(--c-email)"><span class="cdot"></span><span class="cname">Email</span></button>
+      <button class="cat-chip" type="button" data-cat="PHONE" style="--cc:var(--c-phone)"><span class="cdot"></span><span class="cname">Phone</span></button>
+      <button class="cat-chip" type="button" data-cat="IP" style="--cc:var(--c-ip)"><span class="cdot"></span><span class="cname">IP</span></button>
+      <button class="cat-chip" type="button" data-cat="PAN" style="--cc:var(--c-pan)"><span class="cdot"></span><span class="cname">PAN</span></button>
+      <button class="cat-chip" type="button" data-cat="AADHAAR" style="--cc:var(--c-aadhaar)"><span class="cdot"></span><span class="cname">Aadhaar</span></button>
+      <button class="cat-chip" type="button" data-cat="CREDIT_CARD" style="--cc:var(--c-card)"><span class="cdot"></span><span class="cname">Card</span></button>
+      <span class="hint" style="margin-left:auto">A category switched off stays visible in the output — detections are still listed below</span>
+    </div>
+    <div class="redact-stats" aria-label="Occurrence statistics">
+      <div class="rstat"><div class="rl">Total occurrences</div><div class="rv" id="rsTotal">0</div><div class="rs">Every detection in the document</div></div>
+      <div class="rstat"><div class="rl">Unique entities</div><div class="rv" id="rsUnique">0</div><div class="rs">Distinct normalized values</div></div>
+      <div class="rstat"><div class="rl">Redacted occurrences</div><div class="rv" id="rsRedacted" style="color:var(--emerald-bright)">0</div><div class="rs">Actually replaced in the output</div></div>
+      <div class="rstat"><div class="rl">Kept visible</div><div class="rv" id="rsKept" style="color:var(--amber)">0</div><div class="rs">Excluded, overridden or category off</div></div>
+    </div>
+    <div class="mode-note" id="modeNote"><strong>Full Mask</strong> — every approved detection is replaced with <code style="font-family:var(--mono)">[REDACTED]</code>. Surrounding text and document structure are preserved exactly; replacements are applied against the original offsets, so later matches never shift.</div>
+    <div class="pseudo-map" id="pseudoMap" aria-label="Pseudonym assignments in this document"></div>
+  </section>
+
+  <!-- ======= Partial-mask warning ======= -->
+  <div class="warn-banner amber" id="partialWarn" role="alert">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
+    <div><strong>Partial masking is not anonymization.</strong> Last-4 digits, name fragments and network prefixes remain visible by design — combined with other data they can still identify a person. Use partial masking only where a human genuinely needs verification context, and treat the output as still sensitive.</div>
+  </div>
+
+  <!-- ======= Pseudonymization warning ======= -->
+  <div class="warn-banner amber" id="pseudoWarn" role="alert">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
+    <div><strong>Pseudonymization ≠ irreversible anonymization.</strong> Aliases preserve linkability on purpose: anyone who obtains the mapping — or enough surrounding context — can re-identify the people behind <span class="mono">EMAIL_001</span>-style placeholders. PRIVASHIELD keeps the mapping <strong>in this tab's memory only</strong>: it is never written into the exported file, never stored, and is wiped when a new document loads or the session is cleared. Treat pseudonymized output as personal data, not anonymous data.</div>
+  </div>
+
+  <!-- ======= Live comparison workspace (Stage 5) ======= -->
+  <div class="compare-bar">
+    <h2>Live comparison</h2>
+    <span class="hint">Original vs sanitized · line numbers · replacements styled by mode</span>
+    <div class="right">
+      <button class="icon-btn" id="btnSync" type="button" aria-pressed="true">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m17 2 4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="m7 22-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></svg>
+        Sync scroll
+      </button>
+      <button class="icon-btn" id="btnExpand" type="button" aria-pressed="false">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3"/><path d="M21 8V5a2 2 0 0 0-2-2h-3"/><path d="M3 16v3a2 2 0 0 0 2 2h3"/><path d="M16 21h3a2 2 0 0 0 2-2v-3"/></svg>
+        Expand
+      </button>
+      <button class="icon-btn" id="btnCopy3" type="button" disabled>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+        Copy sanitized
+      </button>
+    </div>
+  </div>
+  <div class="diff-grid" id="diffGrid">
+    <section class="panel" aria-label="Original text with PII highlighted">
+      <div class="panel-head">
+        <h2>Original — highlighted</h2>
+        <div class="right"><span class="hint" id="hlCount">0 highlighted</span></div>
+      </div>
+      <div class="codewrap"><div class="gutter" id="gutterOrig" aria-hidden="true"></div><pre class="codebox empty" id="highlightView">Detections will be highlighted here as you type.</pre></div>
+      <div class="legend" aria-hidden="true">
+        <span><i style="background:var(--c-email)"></i>Email</span>
+        <span><i style="background:var(--c-phone)"></i>Phone</span>
+        <span><i style="background:var(--c-ip)"></i>IP</span>
+        <span><i style="background:var(--c-pan)"></i>PAN</span>
+        <span><i style="background:var(--c-aadhaar)"></i>Aadhaar</span>
+        <span><i style="background:var(--c-card)"></i>Card</span>
+        <span style="margin-left:auto">Dashed outline = format candidate · needs review</span>
+      </div>
+    </section>
+
+    <section class="panel" aria-label="Sanitized output">
+      <div class="panel-head">
+        <h2>Sanitized output</h2>
+        <div class="right">
+          <button class="mini-btn" id="btnCopy2" type="button" disabled>Copy</button>
+          <button class="mini-btn" id="btnDownload2" type="button" disabled>Download</button>
+        </div>
+      </div>
+      <div class="codewrap"><div class="gutter" id="gutterSan" aria-hidden="true"></div><pre class="codebox empty" id="sanitizedView">Sanitized text will appear here — replacements follow the redaction mode selected above.</pre></div>
+      <div class="legend">
+        <span id="sanLegend"><i style="background:var(--emerald)"></i><span class="redacted" style="font-family:var(--mono);font-size:11px">[REDACTED]</span>&nbsp;marks every removed value · safe to share</span>
+      </div>
+    </section>
+  </div>
+
+  <!-- ======= Manual-review warning ======= -->
+  <div class="warn-banner" id="reviewWarn" role="alert">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f87171" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
+    <div id="reviewWarnText"><strong>Excluded detections remain visible.</strong></div>
+  </div>
+
+  <!-- ======= Findings ======= -->
+  <section class="panel findings-wrap" id="sec-inspector" aria-label="Detection inspector">
+    <div class="panel-head">
+      <h2>Detection inspector</h2>
+      <span class="hint">Findings register — every detection carries an ID, category, offsets, normalized value &amp; validation status · <b>Locate</b> jumps to the occurrence in the original · <b>Approve</b> a candidate to confirm it, <b>Exclude</b> to leave that value unredacted · the <b>Override</b> dropdown forces one occurrence to a different redaction mode than the global one</span>
+      <div class="right"><span class="hint mono" id="luhnNote"></span></div>
+    </div>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th style="width:86px">ID</th><th>Type</th><th>Matched value</th><th>Normalized</th><th>Validation</th><th>Confidence</th><th>Severity</th><th>Position</th><th>Replacement</th><th>Override</th><th>Review</th></tr></thead>
+        <tbody id="findingsBody">
+          <tr class="empty-row"><td colspan="11">No detections yet. Load the sample data or paste text containing PII.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ======= Analytics (Stage 5) ======= -->
+  <section class="panel findings-wrap" aria-label="Analytics">
+    <div class="panel-head">
+      <h2>Analytics</h2>
+      <span class="hint">Computed live from the current scan — distribution, per-category counts and redaction coverage</span>
+      <div class="right"><span class="hint mono" id="analyticsNote">No data yet</span></div>
+    </div>
+    <div id="analyticsEmpty" class="analytics-empty">Load the sample data or paste a document — the entity distribution, category counts and redaction coverage for the current scan will appear here.</div>
+    <div class="analytics-grid" id="analyticsGrid" style="display:none">
+      <div class="donut-wrap">
+        <svg id="donutChart" width="190" height="190" viewBox="0 0 190 190" role="img" aria-label="Donut chart of detected entity distribution"></svg>
+        <div class="donut-legend" id="donutLegend"></div>
+      </div>
+      <div>
+        <div class="catbars" id="catBars"></div>
+        <div class="coverage">
+          <div class="cov-head"><span><b>Redaction coverage</b> — share of detected occurrences replaced in the output</span><span id="coverageText">0 of 0 redacted · 0%</span></div>
+          <div class="cov-track"><div class="cov-fill" id="coverageFill" style="width:0%"></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= Leak Guard + Privacy Exposure Score (Stage 6) ======= -->
+  <section class="panel findings-wrap" aria-label="Leak Guard and privacy exposure score">
+    <div class="panel-head">
+      <h2>Leak Guard &amp; exposure score</h2>
+      <span class="hint">After every render, the sanitized output is re-scanned with the same engine — anything still matching a supported pattern is listed here, with the reason it survived</span>
+      <div class="right"><span class="hint mono" id="leakScannedAt">Not scanned yet</span></div>
+    </div>
+    <div class="guard-grid">
+      <div>
+        <h3>Privacy exposure score — estimated heuristic</h3>
+        <div class="exp-nums">
+          <div class="exp-num"><div class="el">Before sanitization</div><div class="ev" id="expBefore">0</div></div>
+          <div class="exp-arrow" aria-hidden="true">→</div>
+          <div class="exp-num"><div class="el">Residual after</div><div class="ev after zero" id="expAfter">0</div></div>
+          <div class="exp-num"><div class="el">Reduction</div><div class="ev" id="expReduction" style="font-size:24px;padding-bottom:4px">—</div></div>
+        </div>
+        <div class="exp-cap" style="margin-top:12px">Exposure before</div>
+        <div class="exp-track"><div class="exp-fill before" id="expBarBefore" style="width:0%"></div></div>
+        <div class="exp-cap">Residual exposure (kept-visible values at full weight · partial masks at 40% of their weight)</div>
+        <div class="exp-track"><div class="exp-fill after zero" id="expBarAfter" style="width:0%"></div></div>
+        <div class="weights" id="weightsGrid" aria-label="Sensitivity weights — editable">
+          <div class="weight-cell" style="--wc:var(--c-aadhaar)"><label for="w-AADHAAR"><i></i>Aadhaar</label><input type="number" id="w-AADHAAR" data-weight="AADHAAR" min="0" max="50" step="1" value="10" /></div>
+          <div class="weight-cell" style="--wc:var(--c-card)"><label for="w-CREDIT_CARD"><i></i>Credit card</label><input type="number" id="w-CREDIT_CARD" data-weight="CREDIT_CARD" min="0" max="50" step="1" value="10" /></div>
+          <div class="weight-cell" style="--wc:var(--c-pan)"><label for="w-PAN"><i></i>PAN</label><input type="number" id="w-PAN" data-weight="PAN" min="0" max="50" step="1" value="8" /></div>
+          <div class="weight-cell" style="--wc:var(--c-phone)"><label for="w-PHONE"><i></i>Phone</label><input type="number" id="w-PHONE" data-weight="PHONE" min="0" max="50" step="1" value="6" /></div>
+          <div class="weight-cell" style="--wc:var(--c-email)"><label for="w-EMAIL"><i></i>Email</label><input type="number" id="w-EMAIL" data-weight="EMAIL" min="0" max="50" step="1" value="5" /></div>
+          <div class="weight-cell" style="--wc:var(--c-ip)"><label for="w-IP"><i></i>IP address</label><input type="number" id="w-IP" data-weight="IP" min="0" max="50" step="1" value="3" /></div>
+        </div>
+        <details class="method-note">
+          <summary>How this score is calculated — and what it is not</summary>
+          <p style="margin:8px 0 0">Each detected occurrence contributes its category's sensitivity weight (editable above; the defaults are illustrative). The weighted total is mapped onto 0–100 with a saturating curve — score = 100 × (1 − 1 ÷ (1 + total ÷ 50)) — so a single Aadhaar scores 17, and the score approaches 100 as exposure accumulates instead of growing without bound. <strong>Residual exposure</strong> counts every supported pattern Leak Guard still finds in the output at full weight, plus 40% of the weight of each partially masked value (its retained fragments still identify). The same inputs always produce the same score — it is deterministic and computed only from this document's detections. <strong>It is an estimated exposure heuristic, not a regulatory compliance score</strong>, and a residual score of 0 means only no residual exposure measured by the supported scoring rules — never a guarantee of complete anonymization, since names, addresses and obfuscated identifiers are outside its scope.</p>
+        </details>
+      </div>
+      <div>
+        <h3>Leak Guard — second pass over the sanitized output</h3>
+        <div class="leak-status ok" id="leakStatus">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex:0 0 auto;margin-top:1px"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+          <div id="leakStatusText"><strong>No document loaded.</strong> Load or paste a document — Leak Guard re-scans the sanitized output automatically after every change.</div>
+        </div>
+        <div class="leak-list" id="leakList"></div>
+        <p class="leak-note">Leak Guard runs the same pattern/checksum detection engine as the primary scan and therefore shares the same blind spots. A clear result means <strong>no supported patterns remain</strong> — it is never a claim of complete privacy or guaranteed anonymization: free-text names, postal addresses and obfuscated identifiers (for example “user at gmail dot com”) are not patterns this engine can see. Review the output before sharing anything high-stakes.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= Export guard (Stage 6): unresolved detections block a silent export ======= -->
+  <div class="warn-banner" id="exportGuard" role="alert">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f87171" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
+    <div style="flex:1">
+      <div id="exportGuardText"><strong>Export paused.</strong></div>
+      <div class="guard-actions">
+        <button class="rev-btn" type="button" id="btnGuardReview">Review remaining matches</button>
+        <button class="rev-btn warn" type="button" id="btnGuardProceed">Export anyway</button>
+        <button class="rev-btn plain" type="button" id="btnGuardCancel">Cancel export</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======= Export panel (Stage 5) ======= -->
+  <section class="panel findings-wrap" id="sec-reports" aria-label="Export sanitized output">
+    <div class="panel-head">
+      <h2>Export</h2>
+      <span class="hint">Downloads are generated locally from the current scan · the pseudonym mapping is never included</span>
+    </div>
+    <div class="export-body">
+      <button class="btn primary" id="btnExportTxt" type="button" disabled>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg>
+        Download .txt
+      </button>
+      <button class="btn" id="btnExportCsv" type="button" disabled>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg>
+        Download .csv
+      </button>
+      <button class="btn" id="btnExportCopy" type="button" disabled>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+        Copy sanitized output
+      </button>
+      <span class="export-status" id="exportStatus" role="status">Nothing exported yet this session</span>
+    </div>
+  </section>
+
+  <!-- ======= Sanitization audit report (Stage 6) ======= -->
+  <section class="panel findings-wrap" aria-label="Sanitization audit report">
+    <div class="panel-head">
+      <h2>Sanitization audit report</h2>
+      <span class="hint">Application-generated audit report — <b>not</b> an official compliance certificate. Contains counts, categories and validation results only: never original PII, raw text, original filenames or pseudonym mappings.</span>
+    </div>
+    <div class="report-body">
+      <button class="btn" id="btnReportTxt" type="button" disabled>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 13H8"/><path d="M16 17H8"/></svg>
+        Download report (.txt)
+      </button>
+      <button class="btn" id="btnReportJson" type="button" disabled>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 13H8"/><path d="M16 17H8"/></svg>
+        Download report (.json)
+      </button>
+      <span class="report-status" id="reportStatus">No report generated yet — reports reflect the current document, mode, review decisions and Leak Guard result, and include a SHA-256 hash of the sanitized output when Web Crypto is available.</span>
+    </div>
+    <div class="report-hash" id="reportHash" style="display:none"></div>
+  </section>
+
+  <!-- ======= Detection test suite ======= -->
+  <section class="panel findings-wrap" aria-label="Detection engine test suite">
+    <div class="panel-head">
+      <h2>Detection test suite</h2>
+      <span class="hint">Synthetic fixtures only — Stage 2 unit cases, Stage 3 context / overlap / robustness regressions, CSV structural tests, Stage 4 redaction-mode tests (all three modes, consistency, normalization, overrides, reset), plus Stage 6 tests (Leak Guard second pass, exposure-score determinism, preset integrity, demo-lab coverage, audit-report contents), run in-browser against the live engine</span>
+      <div class="right">
+        <span class="test-summary" id="testSummary">Not run yet</span>
+        <button class="mini-btn" id="btnRunTests" type="button">Run tests</button>
+      </div>
+    </div>
+    <div class="test-grid" id="testResults">
+      <div class="test-group"><h3>Awaiting run</h3><div class="test-case">Press “Run tests” — fixtures execute against the exact detector + validator code used for scanning.</div></div>
+    </div>
+  </section>
+
+  <!-- ======= Structure + Prompt log ======= -->
+  <div class="two-col">
+    <section class="panel" aria-label="Project structure">
+      <div class="panel-head"><h2>Project structure</h2><span class="hint">Modular vanilla JS engine — v1.0.0</span></div>
+      <pre class="struct">privashield/
+├─ <b>index.html</b>            landing page (#/) + workspace (#/app) hash router
+├─ <b>package.json</b>          vite + papaparse (v1.0.0)
+├─ <b>vite.config.js</b>        production CSP + Vite build config
+├─ <b>firebase.json</b>         static Firebase Hosting config (serves dist/)
+├─ <b>README.md</b>
+├─ <b>PROMPT_LOG.md</b>         stage-by-stage build &amp; audit record
+├─ <b>TEST_REPORT.md</b>        reconciled test counts, benchmark &amp; audit findings
+├─ <b>DEMO_SCRIPT.md</b>        live synthetic demonstration walkthrough
+├─ <b>src/</b>
+│  ├─ <b>main.js</b>              app bootstrap · scan pipeline · render · wiring · router
+│  ├─ <b>validators.js</b>       Luhn · Verhoeff · IPv4/IPv6 · PAN holder codes · email/phone rules
+│  ├─ <b>detectors.js</b>        one detector + validator per type
+│  ├─ <b>context.js</b>          ±80-char keyword evidence · closest-keyword veto · ambiguity sweep
+│  ├─ <b>engine.js</b>           candidates → validation → overlap resolution → Detection objects
+│  ├─ <b>redaction.js</b>        FULL [REDACTED] · PARTIAL per-type policies · PSEUDO alias store
+│  ├─ <b>sanitizer.js</b>        offset-safe replacement · mode-aware views · HTML escaping
+│  ├─ <b>session.js</b>          in-memory session state · decisions · overrides · toast
+│  ├─ <b>review.js</b>           approve / exclude per detection
+│  ├─ <b>perf.js</b>             Web Worker scan for inputs ≥ 20k chars
+│  ├─ <b>worker.js</b>           worker entry (engine only, no DOM)
+│  ├─ <b>files.js</b>            FileReader · Papa Parse CSV · per-cell redaction · downloads
+│  ├─ <b>advanced.js</b>         Leak Guard · exposure score · presets · demo lab · export guard
+│  ├─ <b>report.js</b>           sanitization audit report (text/JSON + SHA-256)
+│  ├─ <b>sampleData.js</b>       synthetic noisy dataset · demo lab data · PROMPT_LOG text
+│  ├─ <b>tests.js</b>            in-page test runner (100 fixture checks)
+│  └─ <b>styles.css</b>          dark navy / emerald theme
+└─ <b>tests/</b>
+   ├─ <b>fixtures.js</b>         synthetic fixtures (100 shared checks)
+   ├─ <b>privashield.test.js</b> baseline CLI suite (104 tests — npm test)
+   └─ <b>audit_benchmark.mjs</b> independent benchmark &amp; audit suite (npm run test:audit)
+
+Stack: vanilla JavaScript (ES modules) + HTML + CSS + Vite + Papa Parse.</pre>
+    </section>
+
+    <section class="panel" id="sec-promptlog" aria-label="Prompt log summary">
+      <div class="panel-head">
+        <h2>PROMPT_LOG.md</h2>
+        <div class="right"><button class="mini-btn" id="btnLogDownload" type="button">Download .md</button></div>
+      </div>
+      <div class="log-body">
+        <h3>Release v1.0.0 — Final verification &amp; Firebase Hosting prep · 27 Nov 2026</h3>
+        <ul>
+          <li><b>Vanilla JS &amp; router preserved:</b> finalized v1.0.0 on the modular vanilla JavaScript + Vite + Papa Parse stack with the <code>#/</code> ↔ <code>#/app</code> hash router; added <code>firebase.json</code> for static Firebase Hosting from <code>dist/</code> with strict CSP and security headers.</li>
+          <li><b>Documentation &amp; audit alignment:</b> added <code>DEMO_SCRIPT.md</code>, finalized <code>TEST_REPORT.md</code>, <code>README.md</code>, <code>PROMPT_LOG.md</code> and in-app <code>PROMPT_LOG_MD</code>, and verified all landing CTAs, navigation links, mobile menu, sidebar items and export controls.</li>
+        </ul>
+        <h3>Prompt 06B — Antigravity migration, security audit &amp; benchmark · 27 Nov 2026</h3>
+        <ul>
+          <li><b>Migration &amp; regression fixes:</b> preserved the vanilla JS + Vite + Papa Parse stack, landing page and hash router; fixed callback wiring in <code>main.js</code> (<code>reviewAction</code> → <code>render</code>, <code>applyPreset</code> → <code>setMode</code>), deep-linking to <code>#privacyPanel</code>, Web Worker stale-ID/debounce cancellation on clear or rapid edits, and card/Aadhaar sub-labels so Luhn-invalid candidates are never labelled Luhn-valid.</li>
+          <li><b>Mixed-context &amp; security hardening:</b> updated <code>context.js</code> closest-keyword arbitration so distant benign keywords do not suppress adjacent explicitly labelled candidates while confirmed identifiers always bypass benign vetoes; hardened <code>escapeHtml</code> (<code>&#39;</code>) and <code>tests.js</code> escaping; enforced a production Content Security Policy (<code>script-src 'self'</code>, <code>worker-src 'self'</code>, <code>connect-src 'none'</code>) via <code>vite.config.js</code>.</li>
+          <li><b>Test reconciliation &amp; audit:</b> <code>100</code> in-page fixture checks · <code>104</code> baseline tests in <code>npm test</code> · plus an independent labeled synthetic benchmark and security audit suite in <code>npm run test:audit</code> and <code>TEST_REPORT.md</code>.</li>
+        </ul>
+        <h3>Stage 6 — Advanced differentiators: Leak Guard, exposure score, audit reports, presets, demo lab, transparency · 27 Nov 2026</h3>
+        <ul>
+          <li><b>Leak Guard:</b> every render re-scans the <em>sanitized output</em> with the same engine (original-scan stats preserved). Remaining matches are listed with the reason they survived — excluded in review, category switched off, Keep override, or unresolved — and a <b>Resolve</b> button jumps back to the responsible detection. Downloads pause behind an explicit warning (Review / Export anyway / Cancel) while matches remain or partial masks retain fragments. A clear result is always worded as “no supported patterns remain” — never as complete privacy.</li>
+          <li><b>Privacy Exposure Score:</b> deterministic heuristic over editable sensitivity weights (Aadhaar 10 · Card 10 · PAN 8 · Phone 6 · Email 5 · IP 3), mapped to 0–100 by a saturating curve. Shows estimated exposure before, residual after (kept-visible at full weight, partial masks at 40%), and percentage reduction, with the methodology in the panel. Labelled an estimated exposure metric — <b>not</b> a regulatory compliance score.</li>
+          <li><b>Sanitization audit report:</b> downloadable human-readable (.txt) and JSON reports with timestamp, document type/size, per-category occurrences / unique / validated / candidates / redacted / excluded / kept-visible, validation results, redaction mode, preset, Leak Guard remaining matches, exposure before/after, app version, known limitations, and a SHA-256 of the sanitized output via Web Crypto. No original PII, raw text, original filenames or pseudonym mappings — and labelled an application-generated report, not a compliance certificate.</li>
+          <li><b>Industry presets:</b> Healthcare, Finance, Human Resources, Customer Support and General purpose set the default redaction mode (PSEUDO / FULL / PSEUDO / PARTIAL / FULL) and document the workflow emphasis. Applying one visibly re-enables all six categories — presets never silently exclude a mandatory category — and touching the mode or filters afterwards relabels the configuration “Custom”.</li>
+          <li><b>Synthetic demonstration lab:</b> four clearly-labelled fictional documents (support tickets, financial transaction log, HR resumes, clinical notes), each with repeated entities in multiple formats, several PII categories and planted validation edge cases.</li>
+          <li><b>Privacy transparency panel:</b> processing location (browser), storage policy (session memory), supported categories, detection limitations, a working Clear-session control, and instructions for independently inspecting network activity in DevTools. No fake counters or unverifiable claims.</li>
+          <li>Test suite: <b style="color:var(--emerald-bright)">100 / 100 passing</b> — 89 prior checks plus 11 Stage 6 tests (Leak Guard clean/flagged/classified, partial-mask residual accounting, exposure determinism, preset integrity, demo-lab coverage, audit-report contents incl. the no-PII rule).</li>
+        </ul>
+        <h3>Stage 5B — Landing page &amp; workspace routing · 27 Nov 2026</h3>
+        <ul>
+          <li>Public landing page added at route <b>/</b>: sticky nav (Home · Features · How It Works · Use Cases · Privacy · About) with scroll-spy active indicators, theme toggle, mobile menu and a prominent Launch App button.</li>
+          <li>Hero — “Share the data. Not the identity.” — with a Client-Side Processing indicator, the three trust messages, Start Sanitizing / Try Live Demo CTAs, and a locally-built animated SVG/CSS flow illustration (raw identifiers → privacy shield → redacted / pseudonymized / partially masked output). No external assets.</li>
+          <li>Product overview, an honest statistics band (<b>6</b> PII categories · <b>3</b> redaction modes · <b>0</b> server-side processing — no invented metrics), nine feature cards describing only implemented capabilities (Leak Guard = the remaining-PII count + exclusion warning; audit reports = the findings register + this log), a connected three-step How It Works, four use-case cards, and a privacy section with a client-side architecture diagram plus the required limitation statements.</li>
+          <li>Workspace moved to route <b>/app</b> behind hash routing (<code>#/</code> ↔ <code>#/app</code>) with a sidebar — Dashboard, Sanitization Workspace, Detection Inspector, Audit Reports, Prompt Log, Privacy Information, Back to Home — every item scrolls to or opens the real section; nothing is a placeholder. Try Live Demo opens the workspace with the synthetic sample loaded.</li>
+          <li>Navigation never persists or transmits anything: switching views only toggles visibility, the in-memory document survives the trip, and the page still makes zero runtime network requests. All Stage 1–5 detection, validation, redaction, review, CSV and export behaviour preserved.</li>
+        </ul>
+        <h3>Stage 5 — Premium UI/UX redesign · 27 Nov 2026</h3>
+        <ul>
+          <li>Full product redesign: header with privacy information panel and a working <b>light / dark theme toggle</b>; the four headline analytics cards are now total detected occurrences, unique identifiers, redacted occurrences and remaining PII matches — every number still computed from live application state.</li>
+          <li>Live comparison workspace: <b>line numbers</b> on both panes, <b>synchronized scrolling</b> (toggleable), an <b>expandable</b> layout, and replacements styled by redaction mode.</li>
+          <li>Detection inspector: <b>Locate</b> on every finding (and on each category card) scrolls the original document to that occurrence and flashes it.</li>
+          <li>New Analytics section: SVG <b>donut chart</b> of entity distribution, category-wise count bars, and a redaction-coverage bar — all derived from the current scan, with an honest empty state.</li>
+          <li>New Export panel: download sanitized <b>.txt</b> or <b>.csv</b>, copy output, and an accessible status line confirming each action (the toast is also an <code>aria-live</code> region).</li>
+          <li>Self-contained: Google Fonts and the Papa Parse CDN script are gone — Papa Parse 5.4.1 ships as an npm dependency and fonts use the local system stack, so the page makes <b>zero runtime network requests</b>. All Stage 1–4 detection, validation, redaction, review, CSV and test behaviour preserved.</li>
+        </ul>
+        <h3>Stage 4 — Redaction modes &amp; pseudonymization · 27 Nov 2026</h3>
+        <ul>
+          <li>Three modes behind one module (<code>redaction.js</code>): <b>Full Mask</b> → <code>[REDACTED]</code>; <b>Partial Mask</b> → per-type policies (email <code>a***a@e***.com</code>, phone <code>***-***-3210</code>, Aadhaar <code>XXXX XXXX 0124</code>, PAN <code>AA******4C</code>, card <code>**** **** **** 1111</code>, IPv4 <code>192.168.*.*</code>, IPv6 first group only); <b>Pseudonymize</b> → stable <code>EMAIL_001</code>-style aliases.</li>
+          <li>Pseudonym store is document-scoped and in-memory only, keyed by type + normalized value — repeats and formatting variants (phone prefixes, card spacing) share one alias; aliases survive mode/filter changes, reset on new document or Clear, and are never exported.</li>
+          <li>Instant mode switching, six category filters, and a per-entity Override dropdown (Auto / Full / Partial / Pseudonym / Keep) in every findings row; total occurrences, unique entities and redacted occurrences shown as separate numbers.</li>
+          <li>Warnings in the UI: partial masking retains identifying fragments, and pseudonymization is <b>not</b> irreversible anonymization.</li>
+          <li>Test suite: <b style="color:var(--emerald-bright)">89 / 89 passing</b> — 68 prior checks plus 21 Stage 4 tests (modes, consistency, normalization, mode switching, overrides, reset, CSV cross-row aliases).</li>
+        </ul>
+        <h3>Stage 3 — Accuracy, context &amp; manual review · 27 Nov 2026</h3>
+        <ul>
+          <li>Overlap resolution records suppressed rivals; context arbitration stops a card's first 12 digits surfacing as an Aadhaar candidate — every span counted &amp; redacted once.</li>
+          <li>Context engine: keyword evidence within ±80 chars supports classification, benign order/invoice wording vetoes promotion, and checksum failures surface as <code>AMBIGUOUS</code> candidates instead of silent drops.</li>
+          <li>Manual review: Approve / Exclude per detection, instant count &amp; output updates, red warning banner while excluded values remain visible.</li>
+          <li>CSV: per-cell redaction via Papa Parse (headers, quoted commas, multiline cells preserved); formula-injection warning with apostrophe neutralization on export.</li>
+          <li>Performance: 250 ms debounce, per-text scan cache, Web Worker scan for inputs ≥ 20,000 chars with synchronous fallback.</li>
+          <li>Test suite: <b style="color:var(--emerald-bright)">68 / 68 passing</b> — 48 engine fixtures, 16 Stage 3 regressions (overlap, context, Unicode, timestamps, empty input), 4 CSV structural tests.</li>
+        </ul>
+        <h3>Stage 2 — Detection &amp; validation engine · 27 Nov 2026</h3>
+        <ul>
+          <li>Modular engine: separate detector + validator per entity type; every detection is an object with ID, offsets, normalized value, validation status &amp; confidence.</li>
+          <li>Email: subdomains, plus-addressing, strict boundaries &amp; label rules.</li>
+          <li>Phone: Indian mobile with +91 / 0091 / trunk-0, plus intl. formats with parentheses — normalized E.164-style.</li>
+          <li>IP: IPv4 octet validation + full IPv6 parser (compressed <code>::</code>, loopback, IPv4-embedded).</li>
+          <li>PAN: holder-code structure validation (4th character); bad holder code → format candidate.</li>
+          <li>Aadhaar: <code>Verhoeff</code> checksum — checksum-valid vs format-candidate are reported separately.</li>
+          <li>Cards: 13–19 digits, grouped/plain, <code>Luhn</code> mandatory — failures rejected from confirmed detections.</li>
+          <li>Test suite: 48 synthetic fixtures (positive + negative per category) — <b style="color:var(--emerald-bright)">48 / 48 passing</b>, runnable live below the findings register.</li>
+        </ul>
+        <h3>Stage 1 — Core engine &amp; dashboard · 27 Nov 2026</h3>
+        <ul>
+          <li>Dashboard, large raw-text input, TXT/CSV upload + drag-and-drop, one-click noisy sample.</li>
+          <li>Highlighting, full masking with <code>[REDACTED]</code>, side-by-side diff, entity counts, findings register, risk score.</li>
+          <li>One-click sanitized download (CSV round-tripped via Papa Parse), copy, clear-session.</li>
+        </ul>
+        <details class="log-details">
+          <summary>Known limitations (honest list)</summary>
+          <ul>
+            <li>Leak Guard re-scans for the six supported patterns only — a clear result means no supported patterns remain, not that a document is guaranteed anonymous; the exposure score inherits the same scope.</li>
+            <li>Exposure weights are illustrative defaults; the score is a triage heuristic for comparing before/after on the same document, not a risk measurement comparable across organisations.</li>
+            <li>For CSV input, Leak Guard scans the document-level sanitized text; the per-cell export applies the same keep/redact decisions by value, so coverage matches, but cell boundaries are not re-scanned separately.</li>
+            <li>SHA-256 report hashes need Web Crypto (secure context); where unavailable the report records the hash as null instead of inventing one.</li>
+            <li>Partial-mask policies are fixed per type — no per-type policy editor (e.g. choosing how many digits to reveal).</li>
+            <li>Pseudonymized output is still personal data, not anonymous data — aliases preserve linkability by design.</li>
+            <li>Typing a wholly new document into the textarea does not reset the pseudonym store; load via file/sample or Clear session to restart aliasing from 001.</li>
+            <li>Detection can still miss obfuscated PII (e.g. “user at gmail dot com”) and free-text names/addresses, which need NER.</li>
+            <li>Checksum/format validation is not identity verification — a Luhn/Verhoeff pass never means an identifier is genuine.</li>
+            <li>Phone support covers Indian + common intl. shapes; exotic national formats may be missed or need review.</li>
+            <li>Review decisions are keyed by type + offsets — editing text before a detection shifts its offsets and that decision stops applying.</li>
+            <li>Context is keyword-based (±80 chars); negation or keywords in other languages are not understood.</li>
+          </ul>
+        </details>
+        <p style="margin:10px 0 0">Full prompt text and implementation record are in the downloadable <code>PROMPT_LOG.md</code>.</p>
+      </div>
+    </section>
+  </div>
+
+  <!-- ======= Privacy strip ======= -->
+  <div class="privacy-strip">
+    <div class="p-item">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      <div><strong>Zero transmission</strong>No backend, no external AI APIs, no analytics. Your text never leaves this tab.</div>
+    </div>
+    <div class="p-item">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      <div><strong>Memory-only processing</strong>Documents live in browser memory. Nothing is written to localStorage, cookies, or disk — Clear session wipes it all.</div>
+    </div>
+    <div class="p-item">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+      <div><strong>Auditable by design</strong>Every detection is listed in the findings register with its type, severity, and position before you export.</div>
+    </div>
+  </div>
+
+  <!-- ======= Privacy transparency panel (Stage 6) ======= -->
+  <section class="panel findings-wrap" aria-label="Privacy transparency">
+    <div class="panel-head">
+      <h2>Privacy transparency</h2>
+      <span class="hint">Exactly how this build handles your data — stated plainly, with a way to verify it yourself</span>
+      <div class="right"><button class="mini-btn" id="btnClear2" type="button">Clear session now</button></div>
+    </div>
+    <div class="transp-grid">
+      <div class="transp-item"><strong>Processing location — your browser</strong>Detection, validation, redaction, Leak Guard re-scans, exposure scoring, report generation and hashing all run in this tab on this device. There is no PRIVASHIELD server to send a document to.</div>
+      <div class="transp-item"><strong>Storage policy — session memory only</strong>The document, your review decisions and the pseudonym mapping live in JavaScript memory for this tab session only. Nothing is written to localStorage, cookies, IndexedDB or disk. Closing the tab — or the Clear session button — destroys all of it.</div>
+      <div class="transp-item"><strong>Supported PII categories</strong>Email addresses · phone numbers · IPv4 / IPv6 addresses · Indian PAN · Aadhaar · credit / debit card numbers. Anything outside these six categories is not detected.</div>
+      <div class="transp-item"><strong>Detection limitations</strong>Detection is pattern- and checksum-based. Free-text names, postal addresses, obfuscated values (“user at gmail dot com”), images of documents and unsupported ID formats can be missed. A checksum pass proves mathematical consistency only — never that an identifier is genuine. Partial masks and pseudonyms remain linkable to a person.</div>
+      <div class="transp-item"><strong>Verify the network behaviour yourself</strong>Open your browser's developer tools (<code>F12</code>), go to the <strong>Network</strong> tab, then reload this page and use the app: after the page itself loads, sanitizing, scanning and exporting produce <strong>no network requests carrying your document</strong> — downloads are generated locally as Blob files. You can also disconnect from the network entirely: every feature keeps working.</div>
+      <div class="transp-item"><strong>What leaves this tab</strong>Only files you explicitly download or text you explicitly copy: the sanitized document, the audit report (counts only — no PII, no filenames, no pseudonym mapping) and PROMPT_LOG.md. Nothing is transmitted automatically, and there is no telemetry, analytics or account system in this build.</div>
+    </div>
+  </section>
+
+  <footer>
+    <span>PRIVASHIELD v1.0.0 · Google PromptWars hackathon release</span>
+    <span class="mono">engine: detectors + validators + context · redaction: full / partial / pseudonym · review: manual approve/exclude + overrides · csv: Papa Parse (bundled) · storage: none · network requests: zero</span>
+  </footer>
+</div><!-- /wrap -->
+</div><!-- /app-shell -->
+</div><!-- /appView -->
+
+<div id="toast" role="status" aria-live="polite"></div>
+
+<script type="module" src="/src/main.js"></script>
+
+</body>
+</html>
