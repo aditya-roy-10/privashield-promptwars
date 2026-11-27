@@ -9,12 +9,16 @@
     "build": "vite build",
     "preview": "vite preview",
     "test": "node --test",
-    "test:audit": "node --test tests/audit_benchmark.mjs"
+    "test:audit": "node --test tests/audit_benchmark.mjs",
+    "lint": "eslint ."
   },
   "dependencies": {
     "papaparse": "^5.4.1"
   },
   "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.15.0",
+    "globals": "^17.14.0",
     "typescript": "^5.6.0",
     "vite": "^6.0.0"
   }

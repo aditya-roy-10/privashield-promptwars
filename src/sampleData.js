@@ -36,7 +36,7 @@
    ===================================================================== */
 
 
-export var SAMPLE_TEXT = [
+export const SAMPLE_TEXT = [
 "[2026-11-27 09:14:22] INFO  auth-service: login OK user=aarav.sharma+alerts@mail.example.co.in ip=192.168.1.42 ipv6=2001:db8::1 session=ok",
 "[2026-11-27 09:15:03] WARN  billing: card charge failed for priya.nair@outlook.in, card 4111 1111 1111 1111 (test Visa), retry scheduled",
 "[2026-11-27 09:16:47] INFO  support ticket #4821 opened by rahul.verma99@gmail.com — phone +91 98765 43210, alt 0091 98200 11223",
@@ -58,7 +58,7 @@ export var SAMPLE_TEXT = [
 "Unicode + repeats: उपयोगकर्ता Meera — meera.iyer@company.co.in, mobile +91 98110 24680 (same values as the HR line above, repeated on purpose)."
 ].join("\n");
 
-export var PROMPT_LOG_MD = [
+export const PROMPT_LOG_MD = [
 "# PRIVASHIELD — PROMPT_LOG",
 "",
 "Tagline: \"Share the data. Not the identity.\"",
@@ -931,6 +931,19 @@ export var PROMPT_LOG_MD = [
 "  pending explicit approval.",
 "- Added DEMO_SCRIPT.md and aligned README.md, PROMPT_LOG.md, TEST_REPORT.md,",
 "  and this in-app PROMPT_LOG_MD with verified history and test counts.",
+"",
+"---",
+"",
+"## Prompt 09 — Code Quality & Maintainability Refactoring (27 Nov 2026)",
+"",
+"- Added ESLint flat config (eslint.config.mjs) and npm run lint; fixed all",
+"  439 baseline lint errors down to 0 errors / 0 warnings (modernized var to",
+"  const/let, removed dead renderSanitizedHtml and unused imports/catch vars).",
+"- Eliminated all circular dependencies in src/ (files.js <-> main.js via",
+"  setScanHandler; context.js <-> engine.js via stats parameter).",
+"- Extracted cohesive modules stats.js, render.js, and router.js from",
+"  main.js, shared downloadBlob() and restartFlash() helpers, improved",
+"  worker/file/clipboard error handling, and added JSDoc typedefs.",
 ""
 ].join("\n");
 
@@ -940,7 +953,7 @@ export var PROMPT_LOG_MD = [
    sample plants edge cases: repeated entities in two formats,
    checksum failures that must surface as candidates, benign
    references that must not be promoted, invalid octets. */
-export var DEMO_SAMPLES = {
+export const DEMO_SAMPLES = {
   support: [
     "SYNTHETIC DEMO — customer support tickets (all people, values and companies are fictional)",
     "Ticket #7841 — Priya Nair <priya.nair@example.net>, phone +91 97420 55501",

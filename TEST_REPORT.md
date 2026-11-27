@@ -14,7 +14,7 @@ Three distinct test counts exist in this repository and are preserved honestly w
 |---|---|---:|---|
 | In-browser Detection Test Suite | `src/tests.js` (Workspace → Tests) | **100** | 48 Stage 2 engine fixtures + 16 Stage 3 regressions + 4 CSV tests + 21 Stage 4 redaction tests + 11 Stage 6 tests from `tests/fixtures.js` |
 | Baseline CLI Suite | `npm test` (`tests/privashield.test.js`) | **104** | Exact 100 shared fixture checks above + 4 Node workflow smoke tests on `SAMPLE_TEXT` (Muse baseline preserved) |
-| Independent Audit & Benchmark Suite | `npm run test:audit` (`tests/audit_benchmark.mjs`) | **10** | Independent labeled synthetic benchmark (`BM-01`..`BM-07`), mixed-context checks, Luhn non-confirmation, XSS escaping, `worker.js` large-input scan, Leak Guard blind-spot check, audit-report leak test, CSV safety, production CSP check, and `v1.0.0` release/UI/Firebase structural check |
+| Independent Audit & Benchmark Suite | `npm run test:audit` (`tests/audit_benchmark.mjs`) | **12** | Independent labeled synthetic benchmark (`BM-01`..`BM-07`), mixed-context checks, Luhn non-confirmation, XSS escaping, `worker.js` large-input scan, Leak Guard blind-spot check, audit-report leak test, CSV safety, production CSP check, `v1.0.0` UI/Firebase check, `stats.js` pure helper check, and zero-circular-dependency DAG check |
 
 *Windows PowerShell note:* On this system, `npm.ps1` is blocked by the PowerShell execution policy (`UnauthorizedAccess`), so npm scripts execute via `npm.cmd test`, `npm.cmd run build`, `npm.cmd run test:audit`, `npm.cmd run dev`, and `npm.cmd run preview`.
 
@@ -27,7 +27,11 @@ Three distinct test counts exist in this repository and are preserved honestly w
 - Sample dataset (`SAMPLE_TEXT`) workflow checks verified: 44 detections (`EMAIL: 11, PHONE: 9, IP: 11, PAN: 5, AADHAAR: 3, CREDIT_CARD: 5`), `FULL` redacts 44/44, `PSEUDO` assigns 39 aliases for 39 unique normalized values, `FULL` exposure drops 84 → 0 (100% reduction), Leak Guard clean.
 
 ### Independent Audit & Benchmark Suite (`npm.cmd run test:audit`)
-- **Result:** **10 / 10 passing**, 0 failed, 0 skipped.
+- **Result:** **12 / 12 passing**, 0 failed, 0 skipped.
+
+### Static Analysis (`npm.cmd run lint`)
+- **Baseline (before Prompt 09):** 439 ESLint errors (legacy `var`, unused imports, dead `renderSanitizedHtml`, unused catch bindings).
+- **After Prompt 09:** **0 errors, 0 warnings** across all JS/MJS files.
 - **Benchmark (`BM-01` through `BM-07`, 13 labeled ground-truth entities + distractors):**
   - Initial run caught **2 real engine defects** before fixes were applied:
     1. `BM-01-MIXED-FINANCE` (`FN = 1`): `ipBoundary` in `src/engine.js` rejected `192.0.2.44.` at the end of a sentence because the trailing `.` matched `/[0-9A-Fa-f:.]/`. Fixed in `src/engine.js` so `.` / `:` only blocks when adjacent to `[0-9A-Fa-f:.]`, preserving rejection of multi-dot `1.2.3.4.5`.

@@ -7,41 +7,48 @@
 import { applyRedactions } from './redaction.js';
 import { state, sigOf, planReplacement, toast } from './session.js';
 
-/* Manual review: APPROVED promotes a candidate to CONFIRMED (still
-   redacted); EXCLUDED leaves that one occurrence visible in the
-   sanitized output and is called out by the warning banner. */
-export function applyDecisions(){
-  state.matches.forEach(function(m){
+/**
+ * Recompute active detections, per-detection replacement plan, and
+ * sanitized output from current `state.matches`, `state.decisions`,
+ * `state.overrides`, and `state.categories`.
+ */
+export function applyDecisions() {
+  state.matches.forEach((m) => {
     if (!m.baseReview) m.baseReview = m.reviewStatus;
-    var d = state.decisions[sigOf(m)] || null;
+    const d = state.decisions[sigOf(m)] || null;
     m.userDecision = d;
-    m.reviewStatus = (d === "APPROVED") ? "CONFIRMED" : m.baseReview;
+    m.reviewStatus = d === 'APPROVED' ? 'CONFIRMED' : m.baseReview;
   });
-  state.activeMatches = state.matches.filter(function(m){ return m.userDecision !== "EXCLUDED"; });
-  /* Stage 4 plan: one replacement decision per detection, computed
-     once per render. Pseudonym aliases are requested in document
-     order so numbering follows first appearance, and the store is
-     reused across renders — aliases stay stable when the mode or
-     the category filters change mid-session. */
+  state.activeMatches = state.matches.filter((m) => m.userDecision !== 'EXCLUDED');
   state.plan = {};
   state.redactedCount = 0;
-  state.matches.forEach(function(m){
-    var rep = planReplacement(m);
+  state.matches.forEach((m) => {
+    const rep = planReplacement(m);
     state.plan[sigOf(m)] = rep;
     if (rep !== null) state.redactedCount++;
     m.replacement = rep;
   });
-  state.sanitized = state.text ? applyRedactions(state.text, state.matches, function(m){ return state.plan[sigOf(m)]; }) : "";
+  state.sanitized = state.text ? applyRedactions(state.text, state.matches, (m) => state.plan[sigOf(m)]) : '';
 }
 
-export function reviewAction(id, action, renderFn){
-  var m = null;
-  state.matches.forEach(function(x){ if (x.id === id) m = x; });
+/**
+ * Record a reviewer decision ('approve' | 'exclude' | 'restore') for `id`
+ * and re-render via `renderFn`.
+ */
+export function reviewAction(id, action, renderFn) {
+  const m = state.matches.find((x) => x.id === id) || null;
   if (!m) return;
-  var sig = sigOf(m);
-  if (action === "approve"){ state.decisions[sig] = "APPROVED"; toast(id + " approved — confirmed and kept in the redaction set."); }
-  else if (action === "exclude"){ state.decisions[sig] = "EXCLUDED"; toast(id + " excluded — this value will remain visible in the sanitized output.", true); }
-  else { delete state.decisions[sig]; toast(id + " restored to its automatic status."); }
+  const sig = sigOf(m);
+  if (action === 'approve') {
+    state.decisions[sig] = 'APPROVED';
+    toast(`${id} approved — confirmed and kept in the redaction set.`);
+  } else if (action === 'exclude') {
+    state.decisions[sig] = 'EXCLUDED';
+    toast(`${id} excluded — this value will remain visible in the sanitized output.`, true);
+  } else {
+    delete state.decisions[sig];
+    toast(`${id} restored to its automatic status.`);
+  }
   applyDecisions();
   if (renderFn) renderFn();
 }

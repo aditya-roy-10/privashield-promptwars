@@ -10,11 +10,12 @@ import Papa from 'papaparse';
 
 import { detectAll, detect } from '../src/engine.js';
 import { escapeHtml, renderHighlighted, renderSanitizedRich, isFormulaCell } from '../src/sanitizer.js';
-import { createPseudoStore, replacementFor, applyRedactions, partialMask } from '../src/redaction.js';
-import { state, sigOf, planReplacement } from '../src/session.js';
-import { applyDecisions, reviewAction } from '../src/review.js';
-import { leakScan, classifyResidual, computeExposure, applyPreset } from '../src/advanced.js';
-import { buildAuditReport, reportToText } from '../src/report.js';
+import { createPseudoStore, replacementFor, applyRedactions } from '../src/redaction.js';
+import { state, sigOf } from '../src/session.js';
+import { applyDecisions } from '../src/review.js';
+import { leakScan, classifyResidual, computeExposure } from '../src/advanced.js';
+import { buildAuditReport, reportToText, APP_VERSION } from '../src/report.js';
+import { computeDocumentStats, computeEntityBreakdown, computeLineStarts, formatLinePosition } from '../src/stats.js';
 
 /* =====================================================================
    1. INDEPENDENT LABELED SYNTHETIC BENCHMARK DATASET
@@ -299,10 +300,10 @@ test('release: landing nav, CTAs, mobile menu, sidebar, export controls, firebas
   const fb = JSON.parse(fs.readFileSync(path.join(process.cwd(), 'firebase.json'), 'utf8'));
   const html = fs.readFileSync(path.join(process.cwd(), 'index.html'), 'utf8');
   const mainJs = fs.readFileSync(path.join(process.cwd(), 'src', 'main.js'), 'utf8');
-  const reportJs = fs.readFileSync(path.join(process.cwd(), 'src', 'report.js'), 'utf8');
+  const routerJs = fs.readFileSync(path.join(process.cwd(), 'src', 'router.js'), 'utf8');
 
   assert.equal(pkg.version, '1.0.0');
-  assert.ok(reportJs.includes('APP_VERSION = "1.0.0"'));
+  assert.equal(APP_VERSION, '1.0.0');
   assert.equal(fb.hosting.public, 'dist');
   const cspHeader = fb.hosting.headers[0].headers.find(h => h.key === 'Content-Security-Policy');
   assert.ok(cspHeader && cspHeader.value.includes("connect-src 'none'") && cspHeader.value.includes("frame-ancestors 'none'"));
@@ -325,5 +326,45 @@ test('release: landing nav, CTAs, mobile menu, sidebar, export controls, firebas
     assert.ok(html.includes(`id="${section}"`) && html.includes(`data-navlink="${section}"`), `Missing nav section #${section}`);
   }
   assert.ok(html.includes('Start Sanitizing') && html.includes('Try Live Demo'));
-  assert.ok(mainJs.includes('[data-app-link]') && mainJs.includes('[data-demo-link]') && mainJs.includes('#appSidebar .side-item[data-go]'));
+  assert.ok(mainJs.includes('initRouter('));
+  assert.ok(routerJs.includes('[data-app-link]') && routerJs.includes('[data-demo-link]') && routerJs.includes('#appSidebar .side-item[data-go]'));
+});
+
+test('stats: computeDocumentStats, computeEntityBreakdown and line position helpers work without DOM', () => {
+  const ds = computeDocumentStats('alpha beta\ngamma');
+  assert.deepEqual(ds, { chars: 16, words: 3, lines: 2 });
+  const ls = computeLineStarts('alpha\nbeta');
+  assert.equal(formatLinePosition(ls, { start: 6, end: 10 }), 'L2 · 6–10');
+
+  const matches = detectAll('mail user@example.com card 4111 1111 1111 1111');
+  const bd = computeEntityBreakdown(matches, matches, {}, { EMAIL: true, PHONE: true, IP: true, PAN: true, AADHAAR: true, CREDIT_CARD: true }, 2);
+  assert.equal(bd.counts.EMAIL, 1);
+  assert.equal(bd.counts.CREDIT_CARD, 1);
+  assert.equal(bd.checksumValid.CREDIT_CARD, 1);
+  assert.equal(bd.keptCount, 0);
+  assert.equal(bd.risk, 40);
+  assert.equal(bd.riskLabel, 'HIGH');
+});
+
+test('architecture: src/ module import graph has zero circular dependencies', () => {
+  const srcDir = path.join(process.cwd(), 'src');
+  const files = fs.readdirSync(srcDir).filter((f) => f.endsWith('.js'));
+  const graph = {};
+  for (const f of files) {
+    const code = fs.readFileSync(path.join(srcDir, f), 'utf8');
+    graph[f] = [...code.matchAll(/from\s+['"]\.\/([^'"]+)['"]/g)].map((m) => m[1]);
+  }
+  const visiting = new Set();
+  const visited = new Set();
+  function dfs(node, trail) {
+    if (visiting.has(node)) {
+      assert.fail(`Circular dependency detected: ${[...trail, node].join(' -> ')}`);
+    }
+    if (visited.has(node)) return;
+    visiting.add(node);
+    for (const dep of graph[node] || []) dfs(dep, [...trail, node]);
+    visiting.delete(node);
+    visited.add(node);
+  }
+  for (const f of files) dfs(f, []);
 });

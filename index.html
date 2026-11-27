@@ -885,13 +885,17 @@ Everything is processed in this tab's memory. Nothing is uploaded, stored, or se
 ├─ <b>index.html</b>            landing page (#/) + workspace (#/app) hash router
 ├─ <b>package.json</b>          vite + papaparse (v1.0.0)
 ├─ <b>vite.config.js</b>        production CSP + Vite build config
+├─ <b>eslint.config.mjs</b>     ESLint flat config (browser, worker, Node)
 ├─ <b>firebase.json</b>         static Firebase Hosting config (serves dist/)
 ├─ <b>README.md</b>
 ├─ <b>PROMPT_LOG.md</b>         stage-by-stage build &amp; audit record
 ├─ <b>TEST_REPORT.md</b>        reconciled test counts, benchmark &amp; audit findings
 ├─ <b>DEMO_SCRIPT.md</b>        live synthetic demonstration walkthrough
 ├─ <b>src/</b>
-│  ├─ <b>main.js</b>              app bootstrap · scan pipeline · render · wiring · router
+│  ├─ <b>main.js</b>              app bootstrap · scan/worker pipeline · mode controls · wiring
+│  ├─ <b>stats.js</b>             pure document stats · entity breakdowns · risk &amp; line offsets
+│  ├─ <b>render.js</b>            KPI summary · comparison panes · findings table · SVG analytics
+│  ├─ <b>router.js</b>            landing nav · hash router (#/ ↔ #/app) · sidebar · theme sync
 │  ├─ <b>validators.js</b>       Luhn · Verhoeff · IPv4/IPv6 · PAN holder codes · email/phone rules
 │  ├─ <b>detectors.js</b>        one detector + validator per type
 │  ├─ <b>context.js</b>          ±80-char keyword evidence · closest-keyword veto · ambiguity sweep
@@ -902,7 +906,7 @@ Everything is processed in this tab's memory. Nothing is uploaded, stored, or se
 │  ├─ <b>review.js</b>           approve / exclude per detection
 │  ├─ <b>perf.js</b>             Web Worker scan for inputs ≥ 20k chars
 │  ├─ <b>worker.js</b>           worker entry (engine only, no DOM)
-│  ├─ <b>files.js</b>            FileReader · Papa Parse CSV · per-cell redaction · downloads
+│  ├─ <b>files.js</b>            FileReader · Papa Parse CSV · per-cell redaction · Blob downloads
 │  ├─ <b>advanced.js</b>         Leak Guard · exposure score · presets · demo lab · export guard
 │  ├─ <b>report.js</b>           sanitization audit report (text/JSON + SHA-256)
 │  ├─ <b>sampleData.js</b>       synthetic noisy dataset · demo lab data · PROMPT_LOG text
@@ -922,6 +926,11 @@ Stack: vanilla JavaScript (ES modules) + HTML + CSS + Vite + Papa Parse.</pre>
         <div class="right"><button class="mini-btn" id="btnLogDownload" type="button">Download .md</button></div>
       </div>
       <div class="log-body">
+        <h3>Prompt 09 — Code quality, ESLint, acyclic modules &amp; modularity sprint · 27 Nov 2026</h3>
+        <ul>
+          <li><b>Static analysis &amp; ES modernization:</b> added ESLint flat config (<code>eslint.config.mjs</code>) and <code>npm run lint</code>; resolved all <code>439</code> baseline lint errors (legacy <code>var</code> → <code>const</code>/<code>let</code>, unused imports/dead <code>renderSanitizedHtml</code>, unused catch bindings) down to <code>0</code> errors / <code>0</code> warnings.</li>
+          <li><b>Zero circular dependencies &amp; cleaner modules:</b> removed both <code>files.js</code> ↔ <code>main.js</code> (via <code>setScanHandler</code>) and <code>context.js</code> ↔ <code>engine.js</code> (passing <code>stats</code> to <code>ambiguousSweep</code>); extracted <code>stats.js</code>, <code>render.js</code>, and <code>router.js</code> from <code>main.js</code> (shrinking <code>main.js</code> from ~790 to 395 lines), unified Blob downloads and flash helpers, and added JSDoc typedefs + error-handling improvements.</li>
+        </ul>
         <h3>Release v1.0.0 — Final verification &amp; Firebase Hosting prep · 27 Nov 2026</h3>
         <ul>
           <li><b>Vanilla JS &amp; router preserved:</b> finalized v1.0.0 on the modular vanilla JavaScript + Vite + Papa Parse stack with the <code>#/</code> ↔ <code>#/app</code> hash router; added <code>firebase.json</code> for static Firebase Hosting from <code>dist/</code> with strict CSP and security headers.</li>

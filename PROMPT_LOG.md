@@ -1073,3 +1073,51 @@ provide the final deployment and hackathon submission-readiness report.
   remote debugging was not enabled (`DevToolsActivePort` `ENOENT`); interactive
   browser smoke testing and DevTools offline toggling remain to be confirmed in
   a user browser session.
+
+---
+
+## Prompt 09 — Code Quality & Maintainability Refactoring (27 Nov 2026)
+
+### Prompt received
+Run a targeted code-quality and maintainability refactoring sprint (no frontend
+redesign, no React/TypeScript migration, no detection/validation algorithm
+changes, no security policy weakening, no new runtime dependencies, Git
+checkpoint before modifying anything): install and configure ESLint, add
+`npm run lint`, eliminate circular dependencies (`files.js` ↔ `main.js`),
+modularize `main.js`, modernize `var` → `const`/`let`, remove dead code/unused
+imports, deduplicate repeated logic, add JSDoc comments/typedefs, improve error
+handling, update `README.md` (removing obsolete planned React migration notes)
+and `PROMPT_LOG.md`, and pass `lint`, `test`, `test:audit`, and `build`.
+
+### Refactoring & static analysis results
+- **Git checkpoint:** Saved branch `checkpoint/pre-prompt-09` at `fe3636d`
+  before making any edits.
+- **ESLint (`eslint.config.mjs`, devDependencies `eslint`, `@eslint/js`, `globals`):**
+  - Baseline before refactoring: **439 errors, 0 warnings** (`no-var`, unused
+    imports `renderSanitizedHtml` / `refreshPresetUI` in `main.js`, unused
+    imports in `tests/audit_benchmark.mjs`, and unused catch bindings).
+  - After refactoring: **0 errors, 0 warnings** across all `src/`, `tests/`,
+    `vite.config.js`, and `eslint.config.mjs` files.
+- **Circular dependencies eliminated:**
+  - `files.js` ↔ `main.js`: replaced direct `process` import with
+    `setScanHandler()` + optional callback parameter in `files.js`.
+  - `context.js` ↔ `engine.js`: passed `stats` into `ambiguousSweep()` instead
+    of importing `engineStats` back from `engine.js`.
+  - Added an automated DFS cycle check in `tests/audit_benchmark.mjs` verifying
+    zero circular imports in `src/`.
+- **Modularity & deduplication:**
+  - Extracted `src/stats.js` (pure DOM-free `computeDocumentStats`,
+    `computeEntityBreakdown`, `computeLineStarts`, `formatLinePosition`),
+    `src/render.js` (summary cards, comparison panes, findings table, SVG
+    analytics), and `src/router.js` (`initRouter` landing nav, hash router,
+    sidebar, theme sync, observers), reducing `src/main.js` from ~790 lines to
+    395 lines.
+  - Removed dead `renderSanitizedHtml()`, extracted shared `downloadBlob()` in
+    `files.js` (reused by `report.js` and `main.js`) and `restartFlash()` in
+    `session.js` (reused by `advanced.js`, `router.js`, and `main.js`).
+  - Improved error handling in `worker.js`, `perf.js`, `main.js`
+    (`runSynchronousFallback`, `workerObj.onerror`), `files.js` (`downloadBlob`,
+    `handleFile`, `fallbackCopy`), and `report.js` (`sha256Hex`).
+- **Verification:** `npm.cmd run lint` (**0 errors, 0 warnings**),
+  `npm.cmd test` (**104/104 passing**), `npm.cmd run test:audit` (**12/12 passing**),
+  and `npm.cmd run build` (**26 modules transformed** cleanly into `dist/`).

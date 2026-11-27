@@ -84,25 +84,29 @@ privashield/
 ├─ index.html              landing page (#/) + workspace (#/app), hash router
 ├─ package.json            vite + papaparse (v1.0.0)
 ├─ vite.config.js          production CSP build plugin + preview headers
+├─ eslint.config.mjs       ESLint flat config (browser, worker, Node suites)
 ├─ firebase.json           static Firebase Hosting config (public: dist)
-├─ tsconfig.json           TypeScript config (non-emitting aid; code is JS)
+├─ tsconfig.json           TypeScript config (non-emitting editor aid; code is JS)
 ├─ README.md
 ├─ PROMPT_LOG.md           stage-by-stage build & audit record
 ├─ TEST_REPORT.md          reconciled test counts, benchmark & audit report
 ├─ DEMO_SCRIPT.md          synthetic live demonstration script
 ├─ src/
-│  ├─ main.js              app bootstrap · scan pipeline · render · wiring · router
+│  ├─ main.js              app bootstrap · scan/worker pipeline · mode controls · workspace wiring
+│  ├─ stats.js             pure document stats · entity breakdowns · risk & line offsets
+│  ├─ render.js            KPI summary · comparison panes · findings table · SVG analytics
+│  ├─ router.js            landing navigation · hash router (#/ ↔ #/app) · sidebar · theme sync
 │  ├─ validators.js       Luhn · Verhoeff · IPv4/IPv6 · PAN holder codes · email/phone rules
 │  ├─ detectors.js        one detector + validator per type
 │  ├─ context.js          ±80-char keyword evidence · closest-keyword veto · ambiguity sweep
 │  ├─ engine.js           candidates → validation → overlap resolution → Detection objects
 │  ├─ redaction.js        FULL [REDACTED] · PARTIAL per-type policies · PSEUDO alias store
 │  ├─ sanitizer.js        offset-safe replacement · mode-aware views · HTML escaping · formula check
-│  ├─ session.js          in-memory session state · decisions · overrides · toast
+│  ├─ session.js          in-memory session state · decisions · overrides · toast · flash helper
 │  ├─ review.js           approve / exclude per detection
 │  ├─ perf.js             Web Worker scan for inputs ≥ 20k chars
 │  ├─ worker.js           worker entry (engine only, no DOM)
-│  ├─ files.js            FileReader · Papa Parse CSV · per-cell redaction · downloads
+│  ├─ files.js            FileReader · Papa Parse CSV · per-cell redaction · Blob downloads
 │  ├─ advanced.js         Leak Guard · exposure score · presets · demo lab · export guard
 │  ├─ report.js           sanitization audit report (text/JSON + SHA-256)
 │  ├─ sampleData.js       synthetic noisy dataset · demo lab data · PROMPT_LOG text
@@ -158,9 +162,10 @@ HTTP security headers (`Content-Security-Policy` including `frame-ancestors 'non
 `X-Content-Type-Options: nosniff`, `X-Frame-Options: DENY`,
 `Referrer-Policy: no-referrer`, and `Permissions-Policy`).
 
-To deploy updates (on Windows PowerShell, use `.cmd` shims):
+To lint, test, build, and deploy updates (on Windows PowerShell, use `.cmd` shims):
 
 ```bash
+npm.cmd run lint
 npm.cmd test
 npm.cmd run test:audit
 npm.cmd run build
@@ -170,14 +175,13 @@ firebase.cmd deploy --only hosting --project privashield-promptwars
 See [TEST_REPORT.md](TEST_REPORT.md) for the full audit and benchmark results,
 and [DEMO_SCRIPT.md](DEMO_SCRIPT.md) for the live synthetic demonstration walkthrough.
 
-## Known limitations / incomplete features
+## Known limitations
 
-- **Not the React + TypeScript + Vite build from the stage-1 brief.**
-  This export is a dependency-light **vanilla-JavaScript** static app
-  (ES modules + Vite) that preserves the exact stage 1–6 behaviour.
-  The in-page engine was already modular vanilla JS, so a React/TS
-  migration is a planned next step in Antigravity — the module
-  boundaries in `src/` map 1-to-1 onto the planned components.
+- **Intentional vanilla-JavaScript architecture.**
+  PRIVASHIELD ships as a dependency-light, modular **vanilla-JavaScript**
+  static app (ES modules + Vite + Papa Parse) with an acyclic dependency
+  graph across detection, state, stats, rendering, and routing modules.
+  There is no React or TypeScript runtime layer.
 - **Regex/pattern detection cannot guarantee complete anonymization.**
   Detection is pattern + format-validation + context evidence; novel
   formats, obfuscated values (e.g. "zero three" instead of "03") and
@@ -203,13 +207,8 @@ and [DEMO_SCRIPT.md](DEMO_SCRIPT.md) for the live synthetic demonstration walkth
 - **CSV formula neutralization** prefixes formula-leading cells with
   an apostrophe on export; it does not protect against every
   spreadsheet-injection variant.
-- `files.js` imports the scan entry point `process` from `main.js` —
-  a runtime-only circular import (both sides use each other only
-  inside event handlers / function bodies, never during module
-  evaluation). ES modules handle this safely, but it is a known
-  wart worth cleaning up during the React migration.
 
 ## Prompt log
 
-See [PROMPT_LOG.md](PROMPT_LOG.md) — the stage-by-stage build record
-for prompts 1–6, 05B, and the Stage 7 Antigravity export.
+See [PROMPT_LOG.md](PROMPT_LOG.md) — the stage-by-stage build, audit,
+deployment, and Prompt 09 code-quality refactoring record.

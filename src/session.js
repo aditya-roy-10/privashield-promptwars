@@ -6,69 +6,83 @@
 
 import { createPseudoStore, replacementFor } from './redaction.js';
 
-/* ---------------- report.js / app state ----------------
-   Stage 3 state: scanCache memoizes the last detection run (text →
-   matches) so review actions never re-scan; decisions holds manual
-   review choices in memory only, keyed by type|start|end signature. */
-export var state = { text:"", matches:[], activeMatches:[], sanitized:"", fileName:null, fileKind:"txt", csvMeta:null, decisions:{}, lastCsvNeutralized:0,
-  mode:"FULL", categories:{ EMAIL:true, PHONE:true, IP:true, PAN:true, AADHAAR:true, CREDIT_CARD:true },
-  overrides:{}, pseudoStore:createPseudoStore(), plan:{}, redactedCount:0,
-  preset:"general", leak:null, exposure:null };
+export const TOAST_DURATION_MS = 3200;
 
-export function sigOf(m){ return m.type + "|" + m.start + "|" + m.end; }
+export const state = {
+  text: '',
+  matches: [],
+  activeMatches: [],
+  sanitized: '',
+  fileName: null,
+  fileKind: 'txt',
+  csvMeta: null,
+  decisions: {},
+  lastCsvNeutralized: 0,
+  mode: 'FULL',
+  categories: { EMAIL: true, PHONE: true, IP: true, PAN: true, AADHAAR: true, CREDIT_CARD: true },
+  overrides: {},
+  pseudoStore: createPseudoStore(),
+  plan: {},
+  redactedCount: 0,
+  preset: 'general',
+  leak: null,
+  exposure: null
+};
 
-/* Effective mode for one detection: a per-entity override wins over
-   the global mode; "KEEP" (or an EXCLUDED review decision, or a
-   category switched off) means the value stays visible. */
-export function effectiveMode(m){
-  var ovr = state.overrides[sigOf(m)];
-  if (ovr) return ovr;
-  return state.mode;
+export function sigOf(m) {
+  return `${m.type}|${m.start}|${m.end}`;
 }
 
-export function isKeptVisible(m){
-  if (m.userDecision === "EXCLUDED") return true;
+/** Effective redaction mode for one detection (per-entity override beats global mode). */
+export function effectiveMode(m) {
+  const ovr = state.overrides[sigOf(m)];
+  return ovr || state.mode;
+}
+
+export function isKeptVisible(m) {
+  if (m.userDecision === 'EXCLUDED') return true;
   if (!state.categories[m.type]) return true;
-  if (effectiveMode(m) === "KEEP") return true;
+  if (effectiveMode(m) === 'KEEP') return true;
   return false;
 }
 
-export function planReplacement(m){
+export function planReplacement(m) {
   if (isKeptVisible(m)) return null;
   return replacementFor(m, effectiveMode(m), state.pseudoStore);
 }
 
-export var $ = function(id){ return document.getElementById(id); };
+export const $ = (id) => document.getElementById(id);
 
 export const els = {};
-export function bindElements(){
-  els.input = $("inputText");
-  els.highlight = $("highlightView");
-  els.sanitized = $("sanitizedView");
-  els.findings = $("findingsBody");
-  els.toast = $("toast");
+
+export function bindElements() {
+  els.input = $('inputText');
+  els.highlight = $('highlightView');
+  els.sanitized = $('sanitizedView');
+  els.findings = $('findingsBody');
+  els.toast = $('toast');
 }
 
-export var toastTimer = null;
+/** Restart a one-shot CSS highlight/flash animation on an element. */
+export function restartFlash(el, cls = 'flash-target') {
+  if (!el) return;
+  el.classList.remove(cls);
+  void el.offsetWidth;
+  el.classList.add(cls);
+}
 
-export function toast(msg, isErr){
+export let toastTimer = null;
+
+export function toast(msg, isErr) {
   if (!els.toast) return; /* no DOM yet (Node/test context) — silent no-op */
   els.toast.textContent = msg;
-  els.toast.className = isErr ? "show err" : "show";
+  els.toast.className = isErr ? 'show err' : 'show';
   clearTimeout(toastTimer);
-  toastTimer = setTimeout(function(){ els.toast.className = ""; }, 3200);
-  /* Stage 5: mirror action feedback into the export panel's status
-     line so confirmations persist after the toast fades. */
-  var es = $("exportStatus");
-  if (es && !isErr && (msg.indexOf("downloaded") !== -1 || msg.indexOf("copied") !== -1)) es.textContent = msg;
+  toastTimer = setTimeout(() => {
+    els.toast.className = '';
+  }, TOAST_DURATION_MS);
+  const es = $('exportStatus');
+  if (es && !isErr && (msg.includes('downloaded') || msg.includes('copied'))) es.textContent = msg;
 }
 
-/* ---------------- scan pipeline (Stage 3 performance) ----------------
-   - Live detection is debounced (see wiring, 250 ms).
-   - Results are memoized per exact input text: approve/exclude clicks
-     re-render from the cache instead of re-running every detector.
-   - Inputs ≥ 20,000 chars are scanned in a Web Worker built from this
-     page's own engine modules (validators + detectors + context +
-     engine, sliced out of the script text), so typing never freezes
-     the UI. Any worker failure falls back to a synchronous scan. */
-export var scanCache = { text:null, matches:[] };
+export const scanCache = { text: null, matches: [] };

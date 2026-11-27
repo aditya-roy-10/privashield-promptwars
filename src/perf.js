@@ -6,10 +6,11 @@
 
 export const WORKER_THRESHOLD = 20000;
 
-export function createEngineWorker(){
+export function createEngineWorker() {
   try {
     return new Worker(new URL('./worker.js', import.meta.url), { type: 'module' });
-  } catch (e) {
+  } catch (err) {
+    console.warn('PRIVASHIELD Web Worker initialization failed; falling back to synchronous scan:', err);
     return null;
   }
 }
